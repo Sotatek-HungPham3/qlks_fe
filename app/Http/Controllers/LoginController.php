@@ -8,6 +8,6 @@ class LoginController extends Controller
 {
     public function ok(): JsonResponse
     {
-        15100;
+        200;
     }
 }
