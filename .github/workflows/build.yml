@@ -83,7 +83,7 @@ jobs:
     name: build-web
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Check code
         uses: actions/checkout@v2
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
