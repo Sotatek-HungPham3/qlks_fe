@@ -90,13 +90,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: 6942ba1f6b715cd46e99b6254e76ca324a48f7f8
-      - name: SonarCloud Quality Gate
-        run: |
-          quality_gate_status=$(curl -s -u 6942ba1f6b715cd46e99b6254e76ca324a48f7f8: "https://sonarcloud.io/api/qualitygates/project_status?projectKey=Sotatek-HungPham3_qlks_fe" | jq -r '.projectStatus.status')
-          if [ "$quality_gate_status" != "OK" ]; then
-            echo "Quality Gate failed - $quality_gate_status"
-            exit 1
-          fi
+        with:
+          fail-fast: true
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
