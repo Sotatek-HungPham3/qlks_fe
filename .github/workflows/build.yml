@@ -50,21 +50,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: web-build-fe
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: 'password'
-          MYSQL_ROOT_HOST: '%'
-          MYSQL_DATABASE: 'qlks_fe'
-          MYSQL_USER: 'sail'
-          MYSQL_PASSWORD: 'password'
-          MYSQL_ALLOW_EMPTY_PASSWORD: 1
-        ports:
-          - 3303:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
+      - name: Run docker
+        run: docker compose up -d
+      - name: go to docker
+        run: docker exec -it qlks-fe-app-web-1 bash
       - name: Install Composer
         run: |
           composer install
@@ -74,11 +65,6 @@ jobs:
       - name: Generate App Key
         run: |
           php artisan key:generate
-      - name: Set up MySQL
-        run: |
-          sudo /etc/init.d/mysql start
-          mysql -e 'CREATE DATABASE qlks_fe;'
-          mysql -u sail --password=password -e "SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"
       - name: Migrate DB
         run: php artisan migrate
       - name: Run Testsuite
