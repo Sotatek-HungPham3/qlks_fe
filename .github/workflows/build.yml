@@ -98,9 +98,9 @@ jobs:
           token: sqp_f8db6b9815b873bbb04775ec228ee2003248091f
       - name: Run SonarQube Scanner
         run: sonar-scanner
-               - name: Check SonarQube report
-               run: |
-                 if grep -q 'ERROR' ./target/sonar/report-task.txt; then
-                   echo 'SonarQube found errors in code. Stopping workflow.'
-                   exit 1
-                 fi
+      - name: Check SonarQube report
+        run: |
+          if grep -q 'ERROR' ./target/sonar/report-task.txt; then
+          echo 'SonarQube found errors in code. Stopping workflow.'
+          exit 1
+          fi
