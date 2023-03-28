@@ -50,21 +50,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: web-build-fe
-    services:
-      # How to use MySQL
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: root
-        ports:
-          - 3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-      # How to use Redis
-      redis:
-        image: redis
-        ports:
-          - 6379/tcp
     steps:
+      - - uses: mirromutth/mysql-action@v1.1
+          with:
+            host port: 3306 # Optional, default value is 3306. The port of host
+            container port: 3306 # Optional, default value is 3306. The port of container
+            character set server: 'utf8' # Optional, default value is 'utf8mb4'. The '--character-set-server' option for mysqld
+            collation server: 'utf8_general_ci' # Optional, default value is 'utf8mb4_general_ci'. The '--collation-server' option for mysqld
+            mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
+            mysql database: 'qlks_fe' # Optional, default value is "test". The specified database which will be create
+            mysql root password:  # Required if "mysql user" is empty, default is empty. The root superuser password
+            mysql user: 'root' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
+            mysql password: # Required if "mysql user" exists. The password for the "mysql user"
       - uses: actions/checkout@v3
       - name: Install Composer
         run: |
@@ -75,8 +72,5 @@ jobs:
       - name: Generate App Key
         run: |
           php artisan key:generate
-      - name: Migrate DB
-        run: |
-          php artisan migrate
       - name: Run Testsuite
         run: vendor/bin/phpunit tests/
