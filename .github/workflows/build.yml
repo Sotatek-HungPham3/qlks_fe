@@ -77,7 +77,8 @@ jobs:
       - name: Set up MySQL
         run: |
           sudo /etc/init.d/mysql start
-          mysql -e 'CREATE DATABASE qlks_fe;' -u sail -p password
+          mysql -e 'CREATE DATABASE qlks_fe;'
+          mysql -u sail --password=password -e "SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"
       - name: Migrate DB
         run: php artisan migrate
       - name: Run Testsuite
