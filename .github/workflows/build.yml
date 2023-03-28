@@ -97,8 +97,8 @@ jobs:
           quality_gate=$(curl -s -X GET "https://sonarcloud.io/api/qualitygates/project_status?projectKey=Sotatek-HungPham3_qlks_fe&branch=<master&sonarVersion=8.0" \
               -H "accept: application/json" \
               -H "Authorization: Basic 6942ba1f6b715cd46e99b6254e76ca324a48f7f8")
-          echo $quality_gate
           status=$(echo "$quality_gate" | jq -r '.projectStatus.status')
+          echo "$status"
           if [ "$status" != "OK" ]; then
               echo "Quality Gate status is $status, failing build..."
               exit 1
