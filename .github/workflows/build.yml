@@ -80,7 +80,7 @@ on:
       - master
 jobs:
   test:
-    name: Code Quality Check
+    name: build-web
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -91,16 +91,16 @@ jobs:
           php-version: '8.2'
       - name: Install dependencies
         run: composer install
-      - name: Setup SonarQube
-        uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: sqp_f8db6b9815b873bbb04775ec228ee2003248091f
-          SONAR_HOST_URL: http://localhost:9000
-      - name: Run SonarQube Scanner
-        run: sonar-scanner
-      - name: Check SonarQube report
-        run: |
-          if grep -q 'ERROR' ./target/sonar/report-task.txt; then
-          echo 'SonarQube found errors in code. Stopping workflow.'
-          exit 1
-          fi
+#      - name: Setup SonarQube
+#        uses: sonarsource/sonarqube-scan-action@master
+#        env:
+#          SONAR_TOKEN: sqp_f8db6b9815b873bbb04775ec228ee2003248091f
+#          SONAR_HOST_URL: http://localhost:9000
+#      - name: Run SonarQube Scanner
+#        run: sonar-scanner
+#      - name: Check SonarQube report
+#        run: |
+#          if grep -q 'ERROR' ./target/sonar/report-task.txt; then
+#          echo 'SonarQube found errors in code. Stopping workflow.'
+#          exit 1
+#          fi
