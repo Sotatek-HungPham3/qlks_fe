@@ -49,7 +49,7 @@ jobs:
           SONAR_TOKEN: 6942ba1f6b715cd46e99b6254e76ca324a48f7f8
   build:
     runs-on: ubuntu-latest
-    name: web-build
+    name: web-build-fe
     steps:
       - uses: actions/checkout@v3
       - name: Install Composer
