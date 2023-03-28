@@ -91,6 +91,10 @@ jobs:
           php-version: '8.2'
       - name: Install dependencies
         run: composer install
+      - name: Copy env
+        run:
+          cp .env.example .env
+          cat .env
 #      - name: Setup SonarQube
 #        uses: sonarsource/sonarqube-scan-action@master
 #        env:
