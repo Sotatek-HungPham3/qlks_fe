@@ -61,3 +61,5 @@ jobs:
       - name: Generate App Key
         run: |
           php artisan key:generate
+      - name: Run Testsuite
+        run: vendor/bin/phpunit tests/
