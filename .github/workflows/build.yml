@@ -72,5 +72,7 @@ jobs:
       - name: Generate App Key
         run: |
           php artisan key:generate
+      - name: Migrate DB
+        run: php artisan migrate
       - name: Run Testsuite
         run: vendor/bin/phpunit tests/
