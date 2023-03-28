@@ -26,46 +26,81 @@
 #      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
-name: Build
+#name: Build
+#on:
+#  push:
+#    branches:
+#      - master
+#  pull_request:
+#    types: [opened, synchronize, reopened]
+#    branches: master
+#jobs:
+#  sonarcloud:
+#    name: SonarCloud
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#        with:
+#          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+#      - name: SonarCloud Scan
+#        uses: SonarSource/sonarcloud-github-action@master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+#          SONAR_TOKEN: 6942ba1f6b715cd46e99b6254e76ca324a48f7f8
+#  build:
+#    runs-on: ubuntu-latest
+#    name: web-build-fe
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Run docker
+#        run: docker compose up -d
+#      - name: go to docker
+#        run: docker exec -it qlks-fe-app-web-1 bash
+#      - name: Install Composer
+#        run: |
+#          composer install
+#      - name: Copy .env
+#        run: |
+#          cp .env.example .env
+#      - name: Generate App Key
+#        run: |
+#          php artisan key:generate
+#      - name: Migrate DB
+#        run: php artisan migrate
+#      - name: Run Testsuite
+#        run: vendor/bin/phpunit tests/
+
+name: Pull Request Workflow
 on:
   push:
     branches:
       - master
   pull_request:
-    types: [opened, synchronize, reopened]
-    branches: master
+    branches:
+      - master
 jobs:
-  sonarcloud:
-    name: SonarCloud
+  test:
+    name: Code Quality Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: 6942ba1f6b715cd46e99b6254e76ca324a48f7f8
-  build:
-    runs-on: ubuntu-latest
-    name: web-build-fe
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run docker
-        run: docker compose up -d
-      - name: go to docker
-        run: docker exec -it qlks-fe-app-web-1 bash
-      - name: Install Composer
-        run: |
-          composer install
-      - name: Copy .env
-        run: |
-          cp .env.example .env
-      - name: Generate App Key
-        run: |
-          php artisan key:generate
-      - name: Migrate DB
-        run: php artisan migrate
-      - name: Run Testsuite
-        run: vendor/bin/phpunit tests/
+          php-version: '7.4'
+      - name: Install dependencies
+        run: composer install
+      - name: Setup SonarQube
+        uses: sonarsource/setup-sonarqube@v1
+        with:
+          url: http://localhost:9000
+          token: sqp_f8db6b9815b873bbb04775ec228ee2003248091f
+      - name: Run SonarQube Scanner
+        run: sonar-scanner
+               - name: Check SonarQube report
+               run: |
+                 if grep -q 'ERROR' ./target/sonar/report-task.txt; then
+                   echo 'SonarQube found errors in code. Stopping workflow.'
+                   exit 1
+                 fi
