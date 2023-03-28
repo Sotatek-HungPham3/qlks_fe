@@ -33,6 +33,7 @@ on:
       - master
   pull_request:
     types: [opened, synchronize, reopened]
+    branches: master
 jobs:
   sonarcloud:
     name: SonarCloud
@@ -49,7 +50,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: web-build
-    container: kirschbaumdevelopment/laravel-test-runner:8.2
     steps:
       - uses: actions/checkout@v3
       - name: Install Composer
@@ -61,8 +61,5 @@ jobs:
       - name: Generate App Key
         run: |
           php artisan key:generate
-      - name: Migrate DB
-        run: |
-          php artisan migrate
       - name: Run Testsuite
         run: vendor/bin/phpunit tests/
