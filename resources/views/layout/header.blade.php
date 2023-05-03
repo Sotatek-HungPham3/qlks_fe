@@ -3,7 +3,7 @@
             <div class="container">
                 <!-- Logo -->
                 <div class="logo float-left">
-                    <a href="index-2.html" title=""><img src="images/logo-header.png" alt=""></a>
+                    <a href="index-2.html" title=""><img src="{{ asset('fe/images/logo-header.png') }}" alt=""></a>
                 </div>
                 <!-- End Logo -->
                 <!-- Bars -->

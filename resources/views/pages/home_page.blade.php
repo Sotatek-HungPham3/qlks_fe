@@ -2,289 +2,296 @@
 @section('title-page', 'Trang Chủ')
 @section('content')
 
-        <!-- Sales -->
-        <section class="sales">
-            <!-- Title -->
-            <div class="title-wrap">
-                <div class="container">
-                    <div class="travel-title float-left">
-                        <h2>Hot Sale Today: <span>Paris, Amsterdam, Saint Petersburg & more</span></h2>
-                    </div>
-                    <a href="#" title="" class="awe-btn awe-btn-5 awe-btn-lager arrow-right text-uppercase float-right">ALL SALES</a>
-                </div>
-            </div>
-            <!-- End Title -->
-            <!-- Hot Sales Content -->
+    <!-- Sales -->
+    <section class="sales">
+        <!-- Title -->
+        <div class="title-wrap">
             <div class="container">
-                <div class="sales-cn">
-                    <div class="row">
-                        <!-- HostSales Item -->
-                        <div class="col-xs-6 col-md-3">
-                            <div class="sales-item">
-                                <figure class="home-sales-img">
-                                    <a href="#" title="">
-                                        <img src="images/deal/img-1.jpg" alt="">
-                                    </a>
-                                    <figcaption>
-                                        Save <span>30</span>%
-                                    </figcaption>
-                                </figure>
-                                <div class="home-sales-text">
-                                    <div class="home-sales-name-places">
-                                        <div class="home-sales-name">
-                                            <a href="#" title="">Copley Square Hotel</a>
-                                        </div>
-                                        <div class="home-sales-places">
-                                            <a href="#" title="">Boston</a>,
-                                            <a href="#" title="">Massachusetts</a>
-                                        </div>
+                <div class="travel-title float-left">
+                    <h2>Hot Sale Today: <span>Paris, Amsterdam, Saint Petersburg & more</span></h2>
+                </div>
+                <a href="#" title="" class="awe-btn awe-btn-5 awe-btn-lager arrow-right text-uppercase float-right">ALL
+                    SALES</a>
+            </div>
+        </div>
+        <!-- End Title -->
+        <!-- Hot Sales Content -->
+        <div class="container">
+            <div class="sales-cn">
+                <div class="row">
+                    <!-- HostSales Item -->
+                    <div class="col-xs-6 col-md-3">
+                        <div class="sales-item">
+                            <figure class="home-sales-img">
+                                <a href="#" title="">
+                                    <img src="{{ asset('fe/images/deal/img-1.jpg') }}" alt="">
+                                </a>
+                                <figcaption>
+                                    Save <span>30</span>%
+                                </figcaption>
+                            </figure>
+                            <div class="home-sales-text">
+                                <div class="home-sales-name-places">
+                                    <div class="home-sales-name">
+                                        <a href="#" title="">Copley Square Hotel</a>
                                     </div>
-                                    <hr class="hr">
-                                    <div class="price-box">
-                                        <span class="price old-price">From  <del>$269</del></span>
-                                        <span class="price special-price">$175<small>/night</small></span>
+                                    <div class="home-sales-places">
+                                        <a href="#" title="">Boston</a>,
+                                        <a href="#" title="">Massachusetts</a>
                                     </div>
+                                </div>
+                                <hr class="hr">
+                                <div class="price-box">
+                                    <span class="price old-price">From  <del>$269</del></span>
+                                    <span class="price special-price">$175<small>/night</small></span>
                                 </div>
                             </div>
                         </div>
-                        <!-- End HostSales Item -->
-                        <!-- HostSales Item -->
-                        <div class="col-xs-6 col-md-3">
-                            <div class="sales-item">
-                                <figure class="home-sales-img">
-                                    <a href="#" title="">
-                                        <img src="images/deal/img-2.jpg" alt="">
-                                    </a>
-                                    <figcaption>
-                                        Save <span>30</span>%
-                                    </figcaption>
-                                </figure>
-
-                                <div class="home-sales-text">
-                                    <div class="home-sales-name-places">
-                                        <div class="home-sales-name">
-                                            <a href="#" title="">Grand Hotel Bagni Nuovi</a>
-                                        </div>
-                                        <div class="home-sales-places">
-                                            <a href="#" title="">Boston</a>,
-                                            <a href="#" title="">Italy</a>
-                                        </div>
-                                    </div>
-                                    <hr class="hr">
-                                    <div class="price-box">
-                                        <span class="price old-price">From  <del>$632</del></span>
-                                        <span class="price special-price">$345<small>/night</small></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End HostSales Item -->
-                        <!-- HostSales Item -->
-                        <div class="col-md-6">
-                            <div class="sales-item ">
-                                <figure class="home-sales-img">
-                                    <a href="#" title="">
-                                        <img src="images/deal/img-3.jpg" alt="">
-                                    </a>
-                                    <figcaption>
-                                        Save <span>30</span>%
-                                    </figcaption>
-                                </figure>
-                                <div class="home-sales-text">
-                                    <div class="home-sales-name-places">
-                                        <div class="home-sales-name">
-                                            <a href="#" title="">The Standard, East Village</a>
-                                        </div>
-                                        <div class="home-sales-places">
-                                            <a href="#" title="">New York</a>,
-                                            <a href="#" title="">New York</a>
-                                        </div>
-                                    </div>
-                                    <hr class="hr">
-                                    <div class="price-box">
-                                        <span class="price old-price">From  <del>$582</del></span>
-                                        <span class="price special-price">$258<small>/night</small></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End HostSales Item -->
-                        <!-- HostSales Item -->
-                        <div class="col-md-6">
-                            <div class="sales-item">
-                                <figure class="home-sales-img">
-                                    <a href="#" title="">
-                                        <img src="images/deal/img-4.jpg" alt="">
-                                    </a>
-                                    <figcaption>
-                                        Save <span>30</span>%
-                                    </figcaption>
-                                </figure>
-                                <div class="home-sales-text">
-                                    <div class="home-sales-name-places">
-                                        <div class="home-sales-name">
-                                            <a href="#" title="">Ganges River Cruise</a>
-                                        </div>
-                                        <div class="home-sales-places">
-                                            <a href="#" title="">London</a>,
-                                            <a href="#" title="">United Kingdom</a>
-                                        </div>
-                                    </div>
-                                    <hr class="hr">
-                                    <div class="price-box">
-                                        <span class="price old-price">From  <del>$457</del></span>
-                                        <span class="price special-price">$258<small>/night</small></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End HostSales Item -->
-                        <!-- HostSales Item -->
-                        <div class="col-xs-6 col-md-3">
-                            <div class="sales-item">
-                                <figure class="home-sales-img">
-                                    <a href="#" title="">
-                                        <img src="images/deal/img-5.jpg" alt="">
-                                    </a>
-                                    <figcaption>
-                                        Save <span>30</span>%
-                                    </figcaption>
-                                </figure>
-                                <div class="home-sales-text">
-                                    <div class="home-sales-name-places">
-                                        <div class="home-sales-name">
-                                            <a href="#" title="">Town Hall Hotel</a>
-                                        </div>
-                                        <div class="home-sales-places">
-                                            <a href="#" title="">Boston</a>,
-                                            <a href="#" title="">Massachusetts</a>
-                                        </div>
-                                    </div>
-                                    <hr class="hr">
-                                    <div class="price-box">
-                                        <span class="price old-price">From  <del>$269</del></span>
-                                        <span class="price special-price">$175<small>/night</small></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End HostSales Item -->
-                        <!-- HostSales Item -->
-                        <div class="col-xs-6 col-md-3">
-                            <div class="sales-item">
-                                <figure class="home-sales-img">
-                                    <a href="#" title="">
-                                        <img src="images/deal/img-6.jpg" alt="">
-                                    </a>
-                                    <figcaption>
-                                        Save <span>30</span>%
-                                    </figcaption>
-                                </figure>
-                                <div class="home-sales-text">
-                                    <div class="home-sales-name-places">
-                                        <div class="home-sales-name">
-                                            <a href="#" title="">A Hidden NYC Mystery Hotel</a>
-                                        </div>
-                                        <div class="home-sales-places">
-                                            <a href="#" title="">Boston</a>,
-                                            <a href="#" title="">Italy</a>
-                                        </div>
-                                    </div>
-                                    <hr class="hr">
-                                    <div class="price-box">
-                                        <span class="price old-price">From  <del>$354</del></span>
-                                        <span class="price special-price">$255<small>/night</small></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End HostSales Item -->
                     </div>
+                    <!-- End HostSales Item -->
+                    <!-- HostSales Item -->
+                    <div class="col-xs-6 col-md-3">
+                        <div class="sales-item">
+                            <figure class="home-sales-img">
+                                <a href="#" title="">
+                                    <img src="{{ asset('fe/images/deal/img-2.jpg') }}" alt="">
+                                </a>
+                                <figcaption>
+                                    Save <span>30</span>%
+                                </figcaption>
+                            </figure>
+
+                            <div class="home-sales-text">
+                                <div class="home-sales-name-places">
+                                    <div class="home-sales-name">
+                                        <a href="#" title="">Grand Hotel Bagni Nuovi</a>
+                                    </div>
+                                    <div class="home-sales-places">
+                                        <a href="#" title="">Boston</a>,
+                                        <a href="#" title="">Italy</a>
+                                    </div>
+                                </div>
+                                <hr class="hr">
+                                <div class="price-box">
+                                    <span class="price old-price">From  <del>$632</del></span>
+                                    <span class="price special-price">$345<small>/night</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End HostSales Item -->
+                    <!-- HostSales Item -->
+                    <div class="col-md-6">
+                        <div class="sales-item ">
+                            <figure class="home-sales-img">
+                                <a href="#" title="">
+                                    <img src="{{ asset('fe/images/deal/img-3.jpg') }}" alt="">
+                                </a>
+                                <figcaption>
+                                    Save <span>30</span>%
+                                </figcaption>
+                            </figure>
+                            <div class="home-sales-text">
+                                <div class="home-sales-name-places">
+                                    <div class="home-sales-name">
+                                        <a href="#" title="">The Standard, East Village</a>
+                                    </div>
+                                    <div class="home-sales-places">
+                                        <a href="#" title="">New York</a>,
+                                        <a href="#" title="">New York</a>
+                                    </div>
+                                </div>
+                                <hr class="hr">
+                                <div class="price-box">
+                                    <span class="price old-price">From  <del>$582</del></span>
+                                    <span class="price special-price">$258<small>/night</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End HostSales Item -->
+                    <!-- HostSales Item -->
+                    <div class="col-md-6">
+                        <div class="sales-item">
+                            <figure class="home-sales-img">
+                                <a href="#" title="">
+                                    <img src="{{ asset('fe/images/deal/img-4.jpg') }}" alt="">
+                                </a>
+                                <figcaption>
+                                    Save <span>30</span>%
+                                </figcaption>
+                            </figure>
+                            <div class="home-sales-text">
+                                <div class="home-sales-name-places">
+                                    <div class="home-sales-name">
+                                        <a href="#" title="">Ganges River Cruise</a>
+                                    </div>
+                                    <div class="home-sales-places">
+                                        <a href="#" title="">London</a>,
+                                        <a href="#" title="">United Kingdom</a>
+                                    </div>
+                                </div>
+                                <hr class="hr">
+                                <div class="price-box">
+                                    <span class="price old-price">From  <del>$457</del></span>
+                                    <span class="price special-price">$258<small>/night</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End HostSales Item -->
+                    <!-- HostSales Item -->
+                    <div class="col-xs-6 col-md-3">
+                        <div class="sales-item">
+                            <figure class="home-sales-img">
+                                <a href="#" title="">
+                                    <img src="{{ asset('fe/images/deal/img-5.jpg') }}" alt="">
+                                </a>
+                                <figcaption>
+                                    Save <span>30</span>%
+                                </figcaption>
+                            </figure>
+                            <div class="home-sales-text">
+                                <div class="home-sales-name-places">
+                                    <div class="home-sales-name">
+                                        <a href="#" title="">Town Hall Hotel</a>
+                                    </div>
+                                    <div class="home-sales-places">
+                                        <a href="#" title="">Boston</a>,
+                                        <a href="#" title="">Massachusetts</a>
+                                    </div>
+                                </div>
+                                <hr class="hr">
+                                <div class="price-box">
+                                    <span class="price old-price">From  <del>$269</del></span>
+                                    <span class="price special-price">$175<small>/night</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End HostSales Item -->
+                    <!-- HostSales Item -->
+                    <div class="col-xs-6 col-md-3">
+                        <div class="sales-item">
+                            <figure class="home-sales-img">
+                                <a href="#" title="">
+                                    <img src="{{ asset('fe/images/deal/img-6.jpg') }}" alt="">
+                                </a>
+                                <figcaption>
+                                    Save <span>30</span>%
+                                </figcaption>
+                            </figure>
+                            <div class="home-sales-text">
+                                <div class="home-sales-name-places">
+                                    <div class="home-sales-name">
+                                        <a href="#" title="">A Hidden NYC Mystery Hotel</a>
+                                    </div>
+                                    <div class="home-sales-places">
+                                        <a href="#" title="">Boston</a>,
+                                        <a href="#" title="">Italy</a>
+                                    </div>
+                                </div>
+                                <hr class="hr">
+                                <div class="price-box">
+                                    <span class="price old-price">From  <del>$354</del></span>
+                                    <span class="price special-price">$255<small>/night</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End HostSales Item -->
                 </div>
             </div>
-            <!-- End Hot Sales Content -->
-        </section>
-        <!-- End Sales -->
+        </div>
+        <!-- End Hot Sales Content -->
+    </section>
+    <!-- End Sales -->
 
-        <!-- Travel Destinations -->
-        <section class="destinations">
+    <!-- Travel Destinations -->
+    <section class="destinations">
 
-            <!-- Title -->
-            <div class="title-wrap">
-                <div class="container">
-                    <div class="travel-title float-left">
-                        <h2>Top Travel Destinations</h2>
-                    </div>
-                    <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view all</a>
+        <!-- Title -->
+        <div class="title-wrap">
+            <div class="container">
+                <div class="travel-title float-left">
+                    <h2>Top Travel Destinations</h2>
                 </div>
+                <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view
+                    all</a>
             </div>
-            <!-- End Title -->
+        </div>
+        <!-- End Title -->
 
-            <!-- Destinations Content -->
-            <div class="destinations-cn">
+        <!-- Destinations Content -->
+        <div class="destinations-cn">
 
-                <!-- Background -->
-                <div class="bg-parallax bg-2"></div>
-                <!-- End Background -->
+            <!-- Background -->
+            <div class="bg-parallax bg-2"></div>
+            <!-- End Background -->
 
-                <div class="container">
-                    <div class="row">
-                        <!-- Destinations Filter -->
-                        <div class="col-md-4 col-lg-3">
-                            <div class="intro-filter">
-                                <div class="intro">
-                                    <p>
-                                        <small>Discover</small><br>
-                                        <span>2364</span> destinations
-                                    </p>
-                                    <p>
-                                        <small>With</small><br>
-                                        <span>152,364</span> properties
-                                    </p>
-                                </div>
-                                <ul class="filter">
-                                    <li class="active">
-                                        <a data-toggle="tab" href="#destinations-1"><i class="fa fa-map-marker"></i> Recommendation for you</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#destinations-2"><i class="fa fa-map-marker"></i> Australia &amp; Oceania</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#destinations-3"><i class="fa fa-map-marker"></i> Asia</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#destinations-4"><i class="fa fa-map-marker"></i> Europe</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#destinations-5"><i class="fa fa-map-marker"></i> USA &amp; Canada</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#destinations-6"><i class="fa fa-map-marker"></i> The rest of the world</a>
-                                    </li>
-                                </ul>
+            <div class="container">
+                <div class="row">
+                    <!-- Destinations Filter -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="intro-filter">
+                            <div class="intro">
+                                <p>
+                                    <small>Discover</small><br>
+                                    <span>2364</span> destinations
+                                </p>
+                                <p>
+                                    <small>With</small><br>
+                                    <span>152,364</span> properties
+                                </p>
                             </div>
-
+                            <ul class="filter">
+                                <li class="active">
+                                    <a data-toggle="tab" href="#destinations-1"><i class="fa fa-map-marker"></i>
+                                        Recommendation for you</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#destinations-2"><i class="fa fa-map-marker"></i>
+                                        Australia &amp; Oceania</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#destinations-3"><i class="fa fa-map-marker"></i>
+                                        Asia</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#destinations-4"><i class="fa fa-map-marker"></i> Europe</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#destinations-5"><i class="fa fa-map-marker"></i> USA
+                                        &amp; Canada</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#destinations-6"><i class="fa fa-map-marker"></i> The
+                                        rest of the world</a>
+                                </li>
+                            </ul>
                         </div>
-                        <!-- End Destinations Filter -->
-                        <!-- Destinations Grid -->
-                        <div class="col-md-8 col-lg-9">
-                            <div class="tab-content destinations-grid">
-                                <!-- Tab One -->
-                                <div id="destinations-1" class="clearfix tab-pane fade active in ">
-                                    <!-- Destinations Item -->
-                                    <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
-                                        <div class="destinations-item ">
-                                            <div class="destinations-text">
-                                                <div class="destinations-name">
-                                                    <a href="#" title="">London - UK</a>
-                                                </div>
-                                                <span class="properties-nb">
+
+                    </div>
+                    <!-- End Destinations Filter -->
+                    <!-- Destinations Grid -->
+                    <div class="col-md-8 col-lg-9">
+                        <div class="tab-content destinations-grid">
+                            <!-- Tab One -->
+                            <div id="destinations-1" class="clearfix tab-pane fade active in ">
+                                <!-- Destinations Item -->
+                                <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+                                    <div class="destinations-item ">
+                                        <div class="destinations-text">
+                                            <div class="destinations-name">
+                                                <a href="#" title="">London - UK</a>
+                                            </div>
+                                            <span class="properties-nb">
                                                     <ins>1289</ins> properties
                                                 </span>
-                                            </div>
-                                            <figure class="destinations-img">
-                                                <a href="#" title="">
-                                                    <img src="images/destinations/img-1.jpg" alt="">
+                                        </div>
+                                        <figure class="destinations-img">
+                                            <a href="#" title="">
+                                                <img src="{{asset('fe/images/destinations/img-1.jpg')}}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -303,7 +310,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-2.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-2.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -322,7 +329,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-3.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-3.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -341,7 +348,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-4.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-4.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -360,7 +367,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-5.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-5.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -379,7 +386,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-6.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-6.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -402,7 +409,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-1.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-1.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -421,7 +428,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-2.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-2.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -440,7 +447,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-3.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-3.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -459,7 +466,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-4.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-4.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -478,7 +485,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-5.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-5.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -497,7 +504,7 @@
                                             </div>
                                             <figure class="destinations-img">
                                                 <a href="#" title="">
-                                                    <img src="images/destinations/img-6.jpg" alt="">
+                                                    <img src="{{ asset('fe/images/destinations/img-6.jpg') }}" alt="">
                                                 </a>
                                             </figure>
                                         </div>
@@ -681,7 +688,7 @@
                                 <!--Thumnail Item-->
                                 <div class="thumnail-item active clearfix">
                                     <figure class="float-left">
-                                        <img src="images/magazine/img-1.jpg" alt="">
+                                        <img src="{{ asset('fe/images/magazine/img-1.jpg') }}" alt="">
                                     </figure>
                                     <div class="thumnail-text">
                                         <h4>Thailand by Train with Eastern and Oriental Express</h4>
@@ -692,7 +699,7 @@
                                 <!--Thumnail Item-->
                                 <div class="thumnail-item clearfix">
                                     <figure class="float-left">
-                                        <img src="images/magazine/img-2.jpg" alt="">
+                                        <img src="{{ asset('fe/images/magazine/img-2.jpg') }}" alt="">
                                     </figure>
                                     <div class="thumnail-text">
                                         <h4>Thailand by Train with Eastern and Oriental Express</h4>
@@ -703,7 +710,7 @@
                                 <!--Thumnail Item-->
                                 <div class="thumnail-item clearfix">
                                     <figure class="float-left">
-                                        <img src="images/magazine/img-3.jpg" alt="">
+                                        <img src="{{ asset('fe/images/magazine/img-3.jpg') }}" alt="">
                                     </figure>
                                     <div class="thumnail-text">
                                         <h4>Thailand by Train with Eastern and Oriental Express</h4>
@@ -714,7 +721,7 @@
                                 <!--Thumnail Item-->
                                 <div class="thumnail-item clearfix">
                                     <figure class="float-left">
-                                        <img src="images/magazine/img-4.jpg" alt="">
+                                        <img src="{{ asset('fe/images/magazine/img-4.jpg') }}" alt="">
                                     </figure>
                                     <div class="thumnail-text">
                                         <h4>Thailand by Train with Eastern and Oriental Express</h4>
@@ -731,7 +738,7 @@
             <!-- End Magazine Content -->
         </section>
         <!-- End Travel Magazine -->
-        
+
         <!-- Confidence and Subscribe  -->
         <section class="confidence-subscribe">
             <!-- Background -->

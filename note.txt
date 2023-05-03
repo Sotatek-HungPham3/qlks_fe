@@ -1,0 +1,15 @@
+- B create 1 file trong view có đuôi blade.php thì vào routes/web.php để define đường dẫn trên url.
+- VD define 1 route: Route::get('/home-page', [FrontendController::class, 'homePage'])->name('homePage');
+    + "/home-page": là đường dẫn đến cái site nhé. (http://localhost:{port}/home-page)->ra file mình cần
+    + "FrontendController::class": là controller điều hướng theo mô hình mvc. dùng IDE vscode thì Ctrl + P search file này là dc. Viết hết trong file này nhé.
+    + "'homePage'": là tên function trong controller ở trên nhé
+    + "name('homePage')": này là đặt tên route tùy theo b đặt nma đặt có ý nghĩa chút. Khi muốn gọi route khác từ file blade.php có thể call {{ route('name_route')}}
+- Trong file FrontendControler sẽ có các function điều hướng đến các file blade.php
+VD: public function homePage()
+        {
+            return view('pages.home_page');
+        }
+     + hàm view() sẽ đứng từ folder resources.views nhé.
+     + khi return view() thì bên trong b sẽ truyền folder đứng trc r đến tên file bỏ .blade.php nhé, mỗi 1 folder hay file sẽ ngăn cách bằng dấu .
+     + Nhớ là hàm view() sẽ xuất phát từ resources/views.
+     + vd b có file home_page.blade.php nằm trong folder pages trong folder views => return view('pages.home_pages');

@@ -21,43 +21,16 @@ services:
             - '.:/var/www/html'
         networks:
             - sail
-        depends_on:
-            - mysql-web
-    sonarqube:
-        image: sonarqube:community
-        hostname: sonarqube
-        container_name: sonarqube
-        volumes:
-            - sonarqube_data:/opt/sonarqube/data
-            - sonarqube_extensions:/opt/sonarqube/extensions
-            - sonarqube_logs:/opt/sonarqube/logs
-        ports:
-            - "9000:9000"
-    mysql-web:
-        image: 'mysql/mysql-server:8.0'
-        ports:
-            - '${FORWARD_DB_PORT:-3306}:3306'
-        environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_ROOT_HOST: '%'
-            MYSQL_DATABASE: '${DB_DATABASE}'
-            MYSQL_USER: '${DB_USERNAME}'
-            MYSQL_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_ALLOW_EMPTY_PASSWORD: 1
-        volumes:
-            - 'my_sql_web:/var/lib/mysql'
-            - './vendor/laravel/sail/database/mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
-        networks:
-            - sail
-        healthcheck:
-            test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
-            retries: 3
-            timeout: 5s
-volumes:
-    sonarqube_data:
-    sonarqube_extensions:
-    sonarqube_logs:
-    my_sql_web:
+#    sonarqube:
+#        image: sonarqube:community
+#        hostname: sonarqube
+#        container_name: sonarqube
+#        volumes:
+#            - sonarqube_data:/opt/sonarqube/data
+#            - sonarqube_extensions:/opt/sonarqube/extensions
+#            - sonarqube_logs:/opt/sonarqube/logs
+#        ports:
+#            - "9000:9000"
 networks:
     sail:
         driver: bridge
