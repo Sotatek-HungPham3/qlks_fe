@@ -13,11 +13,7 @@ use App\Http\Controllers\FrontendController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home-page', [FrontendController::class, 'homePage'])->name('homePage');
+Route::get('/', [FrontendController::class, 'homePage'])->name('homePage');
 Route::get('/list-building', [FrontendController::class, 'listBuilding'])->name('listBuilding');
 Route::get('/detail-building', [FrontendController::class, 'detailBuilding'])->name('detailBuilding');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');

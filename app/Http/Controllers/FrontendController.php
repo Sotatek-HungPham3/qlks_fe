@@ -8,7 +8,7 @@ class FrontendController extends Controller
 {
     public function homePage()
     {
-        return view('pages.home_page');
+        return view('pages.index');
     }
     public function listBuilding()
     {
