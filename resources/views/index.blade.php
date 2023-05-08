@@ -63,6 +63,14 @@
 <!-- Main Js -->
 <script type="text/javascript" src="{{ asset('fe/js/script.js') }}"></script>
 <!-- End Main Js -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+<script type="text/javascript">
+    const API_URL = '{{ config('app.api_url') }}';
+    const DOMAIN_S3 = '{{ env('DOMAIN_ADMIN') }}';
+</script>
+<script type="text/javascript" src="{{ asset('fe/js/consts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('fe/js/helper.js') }}"></script>
 {{--<script>--}}
 {{--    (function (i, s, o, g, r, a, m) {--}}
 {{--        i['GoogleAnalyticsObject'] = r;--}}

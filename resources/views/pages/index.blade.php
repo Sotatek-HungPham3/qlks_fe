@@ -23,10 +23,8 @@
                 <!-- Tabs Cat Form -->
                 <ul class="tabs-cat text-center row">
                     <li class="cate-item active col-xs-2">
-                        <a data-toggle="tab" href="#form-hotel" title=""><span>Hotel</span><img src="{{ asset('fe/images/icon-hotel.png') }}" alt=""></a>
-                    </li>
-                    <li class="cate-item col-xs-2">
-                        <a data-toggle="tab" href="#form-tour" title=""><span>TOUR</span><img src="{{ asset('fe/images/icon-vacation.png') }}" alt=""></a>
+                        <a data-toggle="tab" href="#form-hotel" title=""><span>Hotel</span><img
+                                src="{{ asset('fe/images/icon-hotel.png') }}" alt=""></a>
                     </li>
                 </ul>
                 <!-- End Tabs Cat -->
@@ -41,11 +39,8 @@
                             <div class="form-field field-destination">
                                 <div class="select">
                                     <span>Room Type: <small>Deluxe, Supervisor, ...</small></span>
-                                    <select>
-                                        <option>Africa</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
+                                    <select id="selectRoomTypes">
+
                                     </select>
                                 </div>
                             </div>
@@ -73,49 +68,6 @@
                     </div>
                     <!-- End Search Hotel -->
 
-                    <!-- Search Tour-->
-                    <div class="form-cn form-tour tab-pane" id="form-tour">
-                        <h2>Where would you like to go?</h2>
-                        <div class="form-search clearfix">
-                            <div class="form-field field-select field-region">
-                                <div class="select">
-                                    <span>Region: <small>Wourldwide, africa..</small></span>
-                                    <select>
-                                        <option>Africa</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-field field-select field-country">
-                                <div class="select">
-                                    <span>Country</span>
-                                    <select>
-                                        <option>Country</option>
-                                        <option>Viet Nam</option>
-                                        <option>Thai Lan</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-field field-select field-style">
-                                <div class="select">
-                                    <span>Tour Style</span>
-                                    <select>
-                                        <option>Style One</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-submit">
-                                <button type="submit" class="awe-btn awe-btn-medium awe-search">Search</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Search Tour -->
-
                 </div>
                 <!-- End Tabs Content -->
 
@@ -133,197 +85,18 @@
         <div class="title-wrap">
             <div class="container">
                 <div class="travel-title float-left">
-                    <h2>Hot Sale Today: <span>Paris, Amsterdam, Saint Petersburg & more</span></h2>
+                    <h2>Room Types: <span id="spanRoomType"></span></h2>
                 </div>
-                <a href="#" title="" class="awe-btn awe-btn-5 awe-btn-lager arrow-right text-uppercase float-right">ALL SALES</a>
+                <a href="#" title="" class="awe-btn awe-btn-5 awe-btn-lager arrow-right text-uppercase float-right">Show
+                    Images of Room Type</a>
             </div>
         </div>
         <!-- End Title -->
         <!-- Hot Sales Content -->
         <div class="container">
             <div class="sales-cn">
-                <div class="row">
-                    <!-- HostSales Item -->
-                    <div class="col-xs-6 col-md-3">
-                        <div class="sales-item">
-                            <figure class="home-sales-img">
-                                <a href="#" title="">
-                                    <img src="{{ asset('fe/images/deal/img-1.jpg') }}" alt="">
-                                </a>
-                                <figcaption>
-                                    Save <span>30</span>%
-                                </figcaption>
-                            </figure>
-                            <div class="home-sales-text">
-                                <div class="home-sales-name-places">
-                                    <div class="home-sales-name">
-                                        <a href="#" title="">Copley Square Hotel</a>
-                                    </div>
-                                    <div class="home-sales-places">
-                                        <a href="#" title="">Boston</a>,
-                                        <a href="#" title="">Massachusetts</a>
-                                    </div>
-                                </div>
-                                <hr class="hr">
-                                <div class="price-box">
-                                    <span class="price old-price">From  <del>$269</del></span>
-                                    <span class="price special-price">$175<small>/night</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End HostSales Item -->
-                    <!-- HostSales Item -->
-                    <div class="col-xs-6 col-md-3">
-                        <div class="sales-item">
-                            <figure class="home-sales-img">
-                                <a href="#" title="">
-                                    <img src="{{ asset('fe/images/deal/img-2.jpg') }}" alt="">
-                                </a>
-                                <figcaption>
-                                    Save <span>30</span>%
-                                </figcaption>
-                            </figure>
+                <div class="row listRoomType">
 
-                            <div class="home-sales-text">
-                                <div class="home-sales-name-places">
-                                    <div class="home-sales-name">
-                                        <a href="#" title="">Grand Hotel Bagni Nuovi</a>
-                                    </div>
-                                    <div class="home-sales-places">
-                                        <a href="#" title="">Boston</a>,
-                                        <a href="#" title="">Italy</a>
-                                    </div>
-                                </div>
-                                <hr class="hr">
-                                <div class="price-box">
-                                    <span class="price old-price">From  <del>$632</del></span>
-                                    <span class="price special-price">$345<small>/night</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End HostSales Item -->
-                    <!-- HostSales Item -->
-                    <div class="col-md-6">
-                        <div class="sales-item ">
-                            <figure class="home-sales-img">
-                                <a href="#" title="">
-                                    <img src="{{ asset('fe/images/deal/img-3.jpg') }}" alt="">
-                                </a>
-                                <figcaption>
-                                    Save <span>30</span>%
-                                </figcaption>
-                            </figure>
-                            <div class="home-sales-text">
-                                <div class="home-sales-name-places">
-                                    <div class="home-sales-name">
-                                        <a href="#" title="">The Standard, East Village</a>
-                                    </div>
-                                    <div class="home-sales-places">
-                                        <a href="#" title="">New York</a>,
-                                        <a href="#" title="">New York</a>
-                                    </div>
-                                </div>
-                                <hr class="hr">
-                                <div class="price-box">
-                                    <span class="price old-price">From  <del>$582</del></span>
-                                    <span class="price special-price">$258<small>/night</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End HostSales Item -->
-                    <!-- HostSales Item -->
-                    <div class="col-md-6">
-                        <div class="sales-item">
-                            <figure class="home-sales-img">
-                                <a href="#" title="">
-                                    <img src="{{ asset('fe/images/deal/img-4.jpg') }}" alt="">
-                                </a>
-                                <figcaption>
-                                    Save <span>30</span>%
-                                </figcaption>
-                            </figure>
-                            <div class="home-sales-text">
-                                <div class="home-sales-name-places">
-                                    <div class="home-sales-name">
-                                        <a href="#" title="">Ganges River Cruise</a>
-                                    </div>
-                                    <div class="home-sales-places">
-                                        <a href="#" title="">London</a>,
-                                        <a href="#" title="">United Kingdom</a>
-                                    </div>
-                                </div>
-                                <hr class="hr">
-                                <div class="price-box">
-                                    <span class="price old-price">From  <del>$457</del></span>
-                                    <span class="price special-price">$258<small>/night</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End HostSales Item -->
-                    <!-- HostSales Item -->
-                    <div class="col-xs-6 col-md-3">
-                        <div class="sales-item">
-                            <figure class="home-sales-img">
-                                <a href="#" title="">
-                                    <img src="{{ asset('fe/images/deal/img-5.jpg') }}" alt="">
-                                </a>
-                                <figcaption>
-                                    Save <span>30</span>%
-                                </figcaption>
-                            </figure>
-                            <div class="home-sales-text">
-                                <div class="home-sales-name-places">
-                                    <div class="home-sales-name">
-                                        <a href="#" title="">Town Hall Hotel</a>
-                                    </div>
-                                    <div class="home-sales-places">
-                                        <a href="#" title="">Boston</a>,
-                                        <a href="#" title="">Massachusetts</a>
-                                    </div>
-                                </div>
-                                <hr class="hr">
-                                <div class="price-box">
-                                    <span class="price old-price">From  <del>$269</del></span>
-                                    <span class="price special-price">$175<small>/night</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End HostSales Item -->
-                    <!-- HostSales Item -->
-                    <div class="col-xs-6 col-md-3">
-                        <div class="sales-item">
-                            <figure class="home-sales-img">
-                                <a href="#" title="">
-                                    <img src="{{ asset('fe/images/deal/img-6.jpg') }}" alt="">
-                                </a>
-                                <figcaption>
-                                    Save <span>30</span>%
-                                </figcaption>
-                            </figure>
-                            <div class="home-sales-text">
-                                <div class="home-sales-name-places">
-                                    <div class="home-sales-name">
-                                        <a href="#" title="">A Hidden NYC Mystery Hotel</a>
-                                    </div>
-                                    <div class="home-sales-places">
-                                        <a href="#" title="">Boston</a>,
-                                        <a href="#" title="">Italy</a>
-                                    </div>
-                                </div>
-                                <hr class="hr">
-                                <div class="price-box">
-                                    <span class="price old-price">From  <del>$354</del></span>
-                                    <span class="price special-price">$255<small>/night</small></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End HostSales Item -->
                 </div>
             </div>
         </div>
@@ -340,7 +113,8 @@
                 <div class="travel-title float-left">
                     <h2>Top Travel Destinations</h2>
                 </div>
-                <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view all</a>
+                <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view
+                    all</a>
             </div>
         </div>
         <!-- End Title -->
@@ -369,22 +143,27 @@
                             </div>
                             <ul class="filter">
                                 <li class="active">
-                                    <a data-toggle="tab" href="#destinations-1"><i class="fa fa-map-marker"></i> Recommendation for you</a>
+                                    <a data-toggle="tab" href="#destinations-1"><i class="fa fa-map-marker"></i>
+                                        Recommendation for you</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#destinations-2"><i class="fa fa-map-marker"></i> Australia &amp; Oceania</a>
+                                    <a data-toggle="tab" href="#destinations-2"><i class="fa fa-map-marker"></i>
+                                        Australia &amp; Oceania</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#destinations-3"><i class="fa fa-map-marker"></i> Asia</a>
+                                    <a data-toggle="tab" href="#destinations-3"><i class="fa fa-map-marker"></i>
+                                        Asia</a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#destinations-4"><i class="fa fa-map-marker"></i> Europe</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#destinations-5"><i class="fa fa-map-marker"></i> USA &amp; Canada</a>
+                                    <a data-toggle="tab" href="#destinations-5"><i class="fa fa-map-marker"></i> USA
+                                        &amp; Canada</a>
                                 </li>
                                 <li>
-                                    <a data-toggle="tab" href="#destinations-6"><i class="fa fa-map-marker"></i> The rest of the world</a>
+                                    <a data-toggle="tab" href="#destinations-6"><i class="fa fa-map-marker"></i> The
+                                        rest of the world</a>
                                 </li>
                             </ul>
                         </div>
@@ -640,223 +419,6 @@
     </section>
     <!-- End Travel Destinations -->
 
-    <!-- Travel Magazine -->
-    <section class="magazine">
-        <!-- Title -->
-        <div class="title-wrap">
-            <div class="container">
-                <div class="travel-title float-left">
-                    <h2>Travel Magazine</h2>
-                </div>
-                <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view all</a>
-            </div>
-        </div>
-        <!-- End Title -->
-        <!-- Magazine Content -->
-        <div class="container">
-            <div class="magazine-cn">
-                <div class="row">
-                    <!-- Magazine Descript -->
-                    <div class="col-lg-6">
-                        <div class="magazine-ds">
-                            <div id="owl-magazine-ds">
-                                <!-- Magazine Descript Item -->
-                                <div class="magazine-item">
-                                    <div class="magazine-header">
-                                        <h2>Five festivals to look forward to this year</h2>
-                                        <ul>
-                                            <li>by <a href="#" title="">Admin</a></li>
-                                            <li>03.5.2014</li>
-                                        </ul>
-                                        <hr class="hr">
-                                    </div>
-                                    <div class="magazine-body">
-                                        <p>
-                                            Suspendisse ullamcorper lacus et commodo laoreet. Sed sodales aliquet felis, quis volutpat massa imperdiet in. Praesent rutrum malesuada risus, ullamcorper pretium tortor. Mauris lacinia nisl id massa consectetur, eu tempus mauris lacinia. Fusce commodo porttitor sapien quis condimentum.
-                                        </p>
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae. Suspendisse eu libero odio.
-                                        </p>
-
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae.
-                                        </p>
-                                    </div>
-                                    <div class="magazine-footer clearfix">
-                                        <div class="post-share magazine-share float-left">
-                                            <a href="#" title=""><i class="fa fa-facebook"></i></a>
-                                            <a href="#" title=""><i class="fa fa-twitter"></i></a>
-                                            <a href="#" title=""><i class="fa fa-google-plus"></i></a>
-                                        </div>
-                                        <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view more</a>
-                                    </div>
-                                </div>
-                                <!-- End Magazine Descript Item -->
-                                <!-- Magazine Descript Item -->
-                                <div class="magazine-item">
-                                    <div class="magazine-header">
-                                        <h2>Five festivals to look forward to this year</h2>
-                                        <ul>
-                                            <li>by <a href="#" title="">Admin</a></li>
-                                            <li>03.5.2014</li>
-                                        </ul>
-                                        <hr class="hr">
-                                    </div>
-                                    <div class="magazine-body">
-                                        <p>
-                                            Suspendisse ullamcorper lacus et commodo laoreet. Sed sodales aliquet felis, quis volutpat massa imperdiet in. Praesent rutrum malesuada risus, ullamcorper pretium tortor. Mauris lacinia nisl id massa consectetur, eu tempus mauris lacinia. Fusce commodo porttitor sapien quis condimentum.
-                                        </p>
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae. Suspendisse eu libero odio.
-                                        </p>
-
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae.
-                                        </p>
-                                    </div>
-                                    <div class="magazine-footer clearfix">
-                                        <div class="post-share magazine-share float-left">
-                                            <a href="#" title=""><i class="fa fa-facebook"></i></a>
-                                            <a href="#" title=""><i class="fa fa-twitter"></i></a>
-                                            <a href="#" title=""><i class="fa fa-google-plus"></i></a>
-                                        </div>
-                                        <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view more</a>
-                                    </div>
-                                </div>
-                                <!-- End Magazine Descript Item -->
-                                <!-- Magazine Descript Item -->
-                                <div class="magazine-item">
-                                    <div class="magazine-header">
-                                        <h2>Five festivals to look forward to this year</h2>
-                                        <ul>
-                                            <li>by <a href="#" title="">Admin</a></li>
-                                            <li>03.5.2014</li>
-                                        </ul>
-                                        <hr class="hr">
-                                    </div>
-                                    <div class="magazine-body">
-                                        <p>
-                                            Suspendisse ullamcorper lacus et commodo laoreet. Sed sodales aliquet felis, quis volutpat massa imperdiet in. Praesent rutrum malesuada risus, ullamcorper pretium tortor. Mauris lacinia nisl id massa consectetur, eu tempus mauris lacinia. Fusce commodo porttitor sapien quis condimentum.
-                                        </p>
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae. Suspendisse eu libero odio.
-                                        </p>
-
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae.
-                                        </p>
-                                    </div>
-                                    <div class="magazine-footer clearfix">
-                                        <div class="post-share magazine-share float-left">
-                                            <a href="#" title=""><i class="fa fa-facebook"></i></a>
-                                            <a href="#" title=""><i class="fa fa-twitter"></i></a>
-                                            <a href="#" title=""><i class="fa fa-google-plus"></i></a>
-                                        </div>
-                                        <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view more</a>
-                                    </div>
-                                </div>
-                                <!-- End Magazine Descript Item -->
-                                <!-- Magazine Descript Item -->
-                                <div class="magazine-item">
-                                    <div class="magazine-header">
-                                        <h2>Five festivals to look forward to this year</h2>
-                                        <ul>
-                                            <li>by <a href="#" title="">Admin</a></li>
-                                            <li>03.5.2014</li>
-                                        </ul>
-                                        <hr class="hr">
-                                    </div>
-                                    <div class="magazine-body">
-                                        <p>
-                                            Suspendisse ullamcorper lacus et commodo laoreet. Sed sodales aliquet felis, quis volutpat massa imperdiet in. Praesent rutrum malesuada risus, ullamcorper pretium tortor. Mauris lacinia nisl id massa consectetur, eu tempus mauris lacinia. Fusce commodo porttitor sapien quis condimentum.
-                                        </p>
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae. Suspendisse eu libero odio.
-                                        </p>
-
-                                        <p>
-                                            Curabitur sollicitudin magna sed sem blandit sodales. Integer in eros sit amet tellus vulputate laoreet ut in purus. Nullam quis lacus nisl. <br>
-                                            Sed venenatis commodo leo, ac pulvinar ipsum mattis vitae.
-                                        </p>
-                                    </div>
-                                    <div class="magazine-footer clearfix">
-                                        <div class="post-share magazine-share float-left">
-                                            <a href="#" title=""><i class="fa fa-facebook"></i></a>
-                                            <a href="#" title=""><i class="fa fa-twitter"></i></a>
-                                            <a href="#" title=""><i class="fa fa-google-plus"></i></a>
-                                        </div>
-                                        <a href="#" title="" class="awe-btn awe-btn-5 arrow-right awe-btn-lager text-uppercase float-right">view more</a>
-                                    </div>
-                                </div>
-                                <!-- End Magazine Descript Item -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Magazine Descript -->
-                    <!-- Magazine Thumnail -->
-                    <div class="col-lg-6">
-                        <div class="magazine-thum" id="magazine-thum">
-                            <!--Thumnail Item-->
-                            <div class="thumnail-item active clearfix">
-                                <figure class="float-left">
-                                    <img src="{{ asset('fe/images/magazine/img-1.jpg') }}" alt="">
-                                </figure>
-                                <div class="thumnail-text">
-                                    <h4>Thailand by Train with Eastern and Oriental Express</h4>
-                                    <span>03.5.2014</span>
-                                </div>
-                            </div>
-                            <!--End Thumnail Item-->
-                            <!--Thumnail Item-->
-                            <div class="thumnail-item clearfix">
-                                <figure class="float-left">
-                                    <img src="{{ asset('fe/images/magazine/img-2.jpg') }}" alt="">
-                                </figure>
-                                <div class="thumnail-text">
-                                    <h4>Thailand by Train with Eastern and Oriental Express</h4>
-                                    <span>03.5.2014</span>
-                                </div>
-                            </div>
-                            <!--End Thumnail Item-->
-                            <!--Thumnail Item-->
-                            <div class="thumnail-item clearfix">
-                                <figure class="float-left">
-                                    <img src="{{ asset('fe/images/magazine/img-3.jpg') }}" alt="">
-                                </figure>
-                                <div class="thumnail-text">
-                                    <h4>Thailand by Train with Eastern and Oriental Express</h4>
-                                    <span>03.5.2014</span>
-                                </div>
-                            </div>
-                            <!--End Thumnail Item-->
-                            <!--Thumnail Item-->
-                            <div class="thumnail-item clearfix">
-                                <figure class="float-left">
-                                    <img src="{{ asset('fe/images/magazine/img-4.jpg') }}" alt="">
-                                </figure>
-                                <div class="thumnail-text">
-                                    <h4>Thailand by Train with Eastern and Oriental Express</h4>
-                                    <span>03.5.2014</span>
-                                </div>
-                            </div>
-                            <!--End Thumnail Item-->
-                        </div>
-                    </div>
-                    <!-- End Magazine Thumnail -->
-                </div>
-            </div>
-        </div>
-        <!-- End Magazine Content -->
-    </section>
-    <!-- End Travel Magazine -->
-
     <!-- Confidence and Subscribe  -->
     <section class="confidence-subscribe">
         <!-- Background -->
@@ -898,12 +460,15 @@
                 <div class="col-md-6">
                     <div class="subscribe">
                         <h3>Subscribe to our newsletter</h3>
-                        <p>Enter your email address and we’ll send you our regular promotional emails, packed with special offers, great deals, and huge discounts</p>
+                        <p>Enter your email address and we’ll send you our regular promotional emails, packed with
+                            special offers, great deals, and huge discounts</p>
                         <!-- Subscribe Form -->
                         <div class="subscribe-form">
                             <form action="#" method="get">
                                 <input type="text" name="" value="" placeholder="Your email" class="subscribe-input">
-                                <button type="submit" class="awe-btn awe-btn-5 arrow-right text-uppercase awe-btn-lager">subcrible</button>
+                                <button type="submit"
+                                        class="awe-btn awe-btn-5 arrow-right text-uppercase awe-btn-lager">subcrible
+                                </button>
                             </form>
                         </div>
                         <!-- End Subscribe Form -->
@@ -930,4 +495,74 @@
     </section>
     <!-- End Confidence and Subscribe  -->
 
+@endsection
+
+@section('js')
+    <script>
+        $(document).ready(function () {
+            var lstRoomType;
+
+            getRoomType();
+
+            async function getRoomType() {
+                let url = API_URL + '/room-types';
+                lstRoomType = await getData(url);
+
+                console.log(lstRoomType);
+                let str = '';
+                let strSpanRoomType = '';
+                let listRoomType = '';
+                if (lstRoomType.length > 0) {
+                    let i = 0;
+                    for (const item of lstRoomType) {
+                        let starRoomType = '';
+                        if (item.star) {
+                            for (let i = 0; i < item.star; i++) {
+                                starRoomType += `<i class="fa fa-star" aria-hidden="true" style="color: #ffe100;"></i> `;
+                            }
+                        }
+                        let image = DOMAIN_S3 + '/' + item.image;
+                        str += `<option value="${item.id}">${item.name}</option>`;
+                        listRoomType += `
+                    <div class="col-xs-6 col-md-3">
+                        <div class="sales-item">
+                            <figure class="home-sales-img">
+                                <a href="#" title="">
+                                    <img src="${image}" alt="">
+                                </a>
+                                <figcaption>
+                                    Show <span>Room</span>
+                                </figcaption>
+                            </figure>
+                            <div class="home-sales-text">
+                                <div class="home-sales-name-places">
+                                    <div class="home-sales-name">
+                                        <a href="#" title="">${item.name}</a>
+                                    </div>
+                                        <div class="home-sales-places">
+                                            <a href="#" title="">${starRoomType}</a>
+                                        </div>
+                                </div>
+                                <hr class="hr">
+                                <div class="price-box">
+                                    <span class="price special-price">${FORMATTER.format(item.priceRoomType)}<small>/night</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   `;
+                        if (i === lstRoomType.length - 1) {
+                            strSpanRoomType += `${item.name}`;
+                        } else {
+                            strSpanRoomType += `${item.name} , `;
+                        }
+                        i++;
+                    }
+                }
+                $('#selectRoomTypes').html(str);
+                $('#spanRoomType').text(strSpanRoomType);
+                $('.listRoomType').html(listRoomType);
+            }
+        });
+    </script>
 @endsection
