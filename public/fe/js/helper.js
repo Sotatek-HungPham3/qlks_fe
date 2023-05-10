@@ -12,6 +12,15 @@ function notifySuccess(message = '') {
     });
 }
 
+async function getSettingsPage() {
+    let data = localStorage.getItem(SETTINGS_KEY);
+    if (!data) {
+        let url = API_URL + '/settings';
+        data = await getData(url);
+        localStorage.setItem(SETTINGS_KEY, JSON.stringify(data));
+    }
+}
+
 async function loadRoomTypes() {
     let url = API_URL + '/room-types';
     let data = await getData(url);
@@ -28,8 +37,6 @@ async function loadRoomTypes() {
     $('.navRoomTypes').html(str);
     $('.navImages').html(str);
 }
-
-
 
 function notifyError(message = '') {
     $.toast({
