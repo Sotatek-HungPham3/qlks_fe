@@ -52,7 +52,7 @@
                     <!-- Lager Image -->
                     <div class="slide-room-lg">
                         <div id="slide-room-lg">
-                            <img src="{{ asset('fe/images/hotel/img-4.jpg') }}" alt="">
+                            <img id="imageRoomType" src="{{ asset('fe/images/hotel/img-4.jpg') }}" height="500px" alt="">
                         </div>
                     </div>
                     <!-- End Lager Image -->
@@ -238,16 +238,7 @@
                             <div class="policies-item">
                                 <h3 class="hotel-description"></h3>
                                 <p class="detail-description">
-                                    Morbi sed sollicitudin augue. Ut metus nibh, fringilla vitae mi in, aliquam
-                                    ullamcorper nisl. Integer id tincidunt libero. Donec pharetra est sed suscipit
-                                    efficitur. In a gravida quam. Aenean vel dolor augue. In nec lacinia enim, vitae
-                                    fermentum elit. Aliquam non diam sed lectus commodo hendrerit.
-                                    <br>
-                                    Vivamus pulvinar nulla id massa congue varius. Etiam vitae nunc consectetur,
-                                    porttitor purus ac, sagittis dui. Ut sit amet consectetur diam. Suspendisse mollis
-                                    dapibus porta. In erat quam, pulvinar eu efficitur ut, malesuada nec augue.
-                                    Pellentesque odio orci, interdum eu tortor sollicitudin, tincidunt placerat erat.
-                                    Quisque pretium mauris at condimentum imperdiet.
+
                                 </p>
                             </div>
                             <!-- End Details Policies Item -->
@@ -267,9 +258,8 @@
 
                                 </div>
                                 <div class="col-xs-7 text-right">
-                                    <p class="price-book">
-                                        From-<span>$345</span>/night
-                                        <a href="#" title="" class="awe-btn awe-btn-1 awe-btn-lager">Book Now</a>
+                                    <p class="viewImages">
+                                        <a href="#" title="" class="awe-btn awe-btn-1 awe-btn-lager">View All Images</a>
                                     </p>
                                 </div>
                             </div>
@@ -306,7 +296,6 @@
 
                 if (data) {
                     let strPrice = `From-<span>${FORMATTER.format(data.price)}</span>/night
-
                                    <a href="#" title="" class="awe-btn awe-btn-1 awe-btn-lager">Book Now</a>`;
 
                     let strStar = '';
@@ -316,6 +305,7 @@
 
                     $('.hotel-description').text(`${data.name} Description`);
                     $('.detail-description').html(data.description);
+                    $('#imageRoomType').attr('src', DOMAIN_S3 + '/' + data.image);
                     $('.descStar').text(`${data.star} star Very Good`);
                     $('.star').html(strStar);
                     $('.nameRoomType').text(data.name);
