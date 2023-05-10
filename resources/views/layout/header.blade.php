@@ -23,35 +23,15 @@
                                     <li class="{{ \Illuminate\Support\Facades\Request::is('about') ? 'current-menu-parent' : '' }}">
                                         <a href="{{ route('about') }}">About</a>
                                     </li>
-                                    <li>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('room-type/*') ? 'current-menu-parent' : '' }}">
                                         <a href="#" title="">Room Types</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-hotel.html" title="">Hotel</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-list.html">Hotel List 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-list-2.html">Hotel List 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-maps.html">Hotel Map</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-detail.html">Hotel Detail</a>
-                                            </li>
+                                        <ul class="sub-menu navRoomTypes">
+
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="#" title="">Images</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-flight.html" title="">Flights</a>
-                                            </li>
-                                            <li>
-                                                <a href="flight-list.html">Flight List</a>
-                                            </li>
+                                        <ul class="sub-menu navImages">
                                         </ul>
                                     </li>
                                     <li>

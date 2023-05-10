@@ -68,9 +68,15 @@
 <script type="text/javascript">
     const API_URL = '{{ config('app.api_url') }}';
     const DOMAIN_S3 = '{{ env('DOMAIN_ADMIN') }}';
+    const DOMAIN_FE = '{{ config('app.url') }}';
 </script>
 <script type="text/javascript" src="{{ asset('fe/js/consts.js') }}"></script>
 <script type="text/javascript" src="{{ asset('fe/js/helper.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        loadRoomTypes();
+    })
+</script>
 {{--<script>--}}
 {{--    (function (i, s, o, g, r, a, m) {--}}
 {{--        i['GoogleAnalyticsObject'] = r;--}}

@@ -12,6 +12,25 @@ function notifySuccess(message = '') {
     });
 }
 
+async function loadRoomTypes() {
+    let url = API_URL + '/room-types';
+    let data = await getData(url);
+
+    let str = '';
+    if (data.length > 0) {
+        for (const item of data) {
+            let urlRoomType = DOMAIN_FE + '/room-type/' + item.slug;
+            str += `<li>
+                        <a href="${urlRoomType}" title="">${item.name}</a>
+                     </li>`
+        }
+    }
+    $('.navRoomTypes').html(str);
+    $('.navImages').html(str);
+}
+
+
+
 function notifyError(message = '') {
     $.toast({
         heading: 'Error',
