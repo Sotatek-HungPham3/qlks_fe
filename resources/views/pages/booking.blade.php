@@ -155,6 +155,7 @@
                 let check_in = $('#checkIn').val();
                 let url = API_URL + '/check-available-room?checkIn=' + check_in;
                 let data = await getData(url);
+                console.log(data);
                 for (let item of data) {
                     let roomVal = $(`.numberRoom[data-id="${item.roomId}"]`).val();
                     if (roomVal !== 0) {
@@ -176,7 +177,6 @@
                     $(this).val('');
                 }
                 let check_out = $('#checkOut').val();
-                console.log(check_out)
                 if (check_out !== "") {
                     if (dateCompare(check_out, check_in) < 1) {
                         notifyError('Please choose check out large than check in');

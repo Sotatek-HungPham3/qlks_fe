@@ -39,7 +39,7 @@
                             <div class="col-sm-5 text-right">
                                 <p class="price-book">
                                     From-<span>$345</span>/night
-                                    <a href="#" title="" class="awe-btn awe-btn-1 awe-btn-lager">Book Now</a>
+                                    <a href="#" title="" class="awe-btn awe-btn-1 awe-btn-lager bookNow">Book Now</a>
                                 </p>
                             </div>
                         </div>
@@ -298,7 +298,7 @@
 
                 if (data) {
                     let strPrice = `From-<span>${FORMATTER.format(data.price)}</span>/night
-                                   <a href="#" title="" class="awe-btn awe-btn-1 awe-btn-lager">Book Now</a>`;
+                                   <a href="${DOMAIN_FE + '/booking?room_type=' + data.id}" title="" class="awe-btn awe-btn-1 awe-btn-lager bookNow">Book Now</a>`;
 
                     let strStar = '';
                     for (let i = 0; i < data.star; i++) {
@@ -338,7 +338,7 @@
                                             </td>
 
                                             <td class="avai-td-book">
-                                                <a href="#" class="awe-btn awe-btn-1 awe-btn-small">Book</a>
+                                                <a href="${DOMAIN_FE + '/booking?room_type=' + item.id}" class="awe-btn awe-btn-1 awe-btn-small">Book</a>
                                             </td>
                                         </tr>`;
                     }
