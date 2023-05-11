@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -33,9 +34,14 @@ class FrontendController extends Controller
         return view('pages.contact');
     }
 
-    public function payment()
+    public function booking(Request $request)
     {
-        return view('pages.payment');
+        return view('pages.booking')->with([
+            'roomType' => $request->room_type,
+            'checkIn' => $request->check_in,
+            'checkOut' => $request->check_out,
+            'guest' => $request->guest
+        ]);
     }
 
     public function blog()

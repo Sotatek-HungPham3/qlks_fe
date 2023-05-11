@@ -18,11 +18,12 @@ Route::get('/list-building', [FrontendController::class, 'listBuilding'])->name(
 Route::get('/room-type/{slug}', [FrontendController::class, 'detailBuilding'])->name('detailBuilding');
 Route::get('/images/{slug}', [FrontendController::class, 'images'])->name('images');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/booking/{room_type?}/{check_in?}/{check_out?}/{guest?}', [FrontendController::class, 'booking'])->name('booking');
 
 
 
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
-Route::get('/payment', [FrontendController::class, 'payment'])->name('payment');
+
 Route::get('/blog', [FrontendController::class, 'blog'])->name('blog');
 Route::get('/blog-detail', [FrontendController::class, 'blogDetail'])->name('blogDetail');
 Route::get('/flight', [FrontendController::class, 'flight'])->name('flight');

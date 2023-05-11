@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('fe/css/library/owl.carousel.css') }}">
     <!-- End Library CSS -->
     <link rel="stylesheet" href="{{ asset('fe/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css">
 
     @yield('css')
 </head>

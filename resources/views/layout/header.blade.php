@@ -37,6 +37,9 @@
                                     <li>
                                         <a href="#" title="">Contact Us</a>
                                     </li>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('booking') ? 'current-menu-parent' : '' }}">
+                                        <a href="{{ route('booking') }}">Booking Now</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

@@ -45,24 +45,27 @@
                                 </div>
                             </div>
                             <div class="form-field field-date">
-                                <input type="text" class="field-input calendar-input" placeholder="Check in">
+                                <input type="text" class="field-input calendar-input" id="check_in"
+                                       placeholder="Check in">
                             </div>
                             <div class="form-field field-date">
-                                <input type="text" class="field-input calendar-input" placeholder="Check out">
+                                <input type="text" class="field-input calendar-input" id="check_out"
+                                       placeholder="Check out">
                             </div>
                             <div class="form-field field-select">
                                 <div class="select">
                                     <span>Guest</span>
-                                    <select>
-                                        <option>Guest</option>
-                                        <option>1 Guest</option>
-                                        <option>2 Guest</option>
-                                        <option>3 Guest</option>
+                                    <select id="guest">
+                                        <option selected disabled>Guest</option>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guest</option>
+                                        <option value="3">3 Guest</option>
+                                        <option value="more">More</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-submit">
-                                <button type="submit" class="awe-btn awe-btn-lager awe-search">Search</button>
+                                <button type="submit" class="awe-btn awe-search booking">Book Now</button>
                             </div>
                         </div>
                     </div>
@@ -237,7 +240,7 @@
                 let url = API_URL + '/room-types';
                 lstRoomType = await getData(url);
 
-                let str = '';
+                let str = '<option value="select" disabled selected>Choose room type</option>';
                 let strSpanRoomType = '';
                 let listRoomType = '';
                 if (lstRoomType.length > 0) {
@@ -317,6 +320,71 @@
 
                 $('#destinations-1').html(str);
             }
+
+            $('.booking').click(function () {
+                let room_type = $('#selectRoomTypes').val();
+                let check_in = $('#check_in').val();
+                let check_out = $('#check_out').val();
+                let guest = $('#guest').val();
+
+                if (room_type === null) {
+                    notifyError('Please choose room type');
+                    return;
+                }
+                if (check_in === "") {
+                    notifyError('Please choose check in');
+                    return;
+                }
+                if (check_out === "") {
+                    notifyError('Please choose check out');
+                    return;
+                }
+                if (guest === null) {
+                    notifyError('Please choose guest');
+                    return;
+                }
+
+                check_in = new Date(check_in).getTime() / 1000;
+                check_out = new Date(check_out).getTime() / 1000;
+
+                window.location.href = DOMAIN_FE + `/booking?room_type=${room_type}&check_in=${check_in}&check_out=${check_out}&guest=${guest}`;
+            });
+
+            $('#check_in').change(function () {
+                let check_in = $(this).val();
+                let today = new Date().toLocaleDateString()
+
+                if (dateCompare(check_in, today) < 1) {
+                    notifyError('Please choose check in after today');
+                    $(this).val('');
+                }
+                let check_out = $('#check_out').val();
+                if (check_out) {
+                    if (dateCompare(check_out, check_in) < 1) {
+                        notifyError('Please choose check out large than check in');
+                        $(this).val('');
+                    }
+                }
+
+            });
+
+            $('#check_out').change(function () {
+                let check_out = $(this).val();
+                let today = new Date().toLocaleDateString()
+
+                if (dateCompare(check_out, today) < 1) {
+                    notifyError('Please choose check out after today');
+                    $(this).val('');
+                }
+
+                let check_in = $('#check_in').val();
+                if (check_in) {
+                    if (dateCompare(check_out, check_in) < 1) {
+                        notifyError('Please choose check out large than check in');
+                        $(this).val('');
+                    }
+                }
+            });
         });
     </script>
 @endsection
