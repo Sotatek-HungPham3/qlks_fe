@@ -260,7 +260,7 @@
                                 </div>
                                 <div class="col-xs-7 text-right">
                                     <p class="viewImages">
-                                        <a href="#" title="" class="awe-btn awe-btn-1 awe-btn-lager">View All Images</a>
+                                        <a href="" title="" class="awe-btn awe-btn-1 awe-btn-lager">View All Images</a>
                                     </p>
                                 </div>
                             </div>
@@ -312,6 +312,7 @@
                     $('.star').html(strStar);
                     $('.nameRoomType').text(data.name);
                     $('.price-book').html(strPrice);
+                    $('.viewImages').children('a').attr('href', DOMAIN_FE + '/images/' + data.slug);
                 }
             }
 
@@ -351,7 +352,6 @@
                 let urlUtilitiesOfRoomType = API_URL + '/utilities/room-type/' + slug;
                 let utilitiesOfRoomType = await getData(urlUtilitiesOfRoomType);
 
-                console.log(utilitiesOfRoomType)
                 let str = '';
                 if (data.length > 0) {
                     for (const item of data) {

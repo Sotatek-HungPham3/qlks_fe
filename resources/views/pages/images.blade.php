@@ -47,6 +47,12 @@
                 let str = '';
                 if (data.length > 0) {
                     for (const item of data) {
+                        let hot = '';
+                        if (item.is_hot) {
+                            hot = ` <figcaption>
+                                                    <span style="color: red; font-size: 2em;">HOT</span>
+                                                </figcaption>`;
+                        }
                         let imageURL = DOMAIN_S3 + '/' + item.url;
                         str += `<!-- Cruise Deal Item -->
                                     <div class="col-xs-6 col-md-4 col-lg-3">
@@ -56,9 +62,7 @@
                                                     <img src="${imageURL}" alt="" height="300px;" width="300px;">
                                                 </a>
 
-                                                <figcaption>
-                                                    <span style="color: red; font-size: 2em;">HOT</span>
-                                                </figcaption>
+                                                ${hot}
                                             </figure>
                                         </div>
                                     </div>
