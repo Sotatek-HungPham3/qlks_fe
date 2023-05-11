@@ -26,6 +26,7 @@ async function loadRoomTypes() {
     let data = await getData(url);
 
     let str = '';
+    let str2 = '';
     if (data.length > 0) {
         for (const item of data) {
             let urlRoomType = DOMAIN_FE + '/room-type/' + item.slug;
@@ -33,9 +34,15 @@ async function loadRoomTypes() {
                         <a href="${urlRoomType}" title="">${item.name}</a>
                      </li>`
         }
+        for (const item of data) {
+            let urlRoomType = DOMAIN_FE + '/images/' + item.slug;
+            str2 += `<li>
+                        <a href="${urlRoomType}" title="">${item.name}</a>
+                     </li>`
+        }
     }
     $('.navRoomTypes').html(str);
-    $('.navImages').html(str);
+    $('.navImages').html(str2);
 }
 
 function notifyError(message = '') {

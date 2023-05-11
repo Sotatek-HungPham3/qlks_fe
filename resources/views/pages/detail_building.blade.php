@@ -52,7 +52,8 @@
                     <!-- Lager Image -->
                     <div class="slide-room-lg">
                         <div id="slide-room-lg">
-                            <img id="imageRoomType" src="{{ asset('fe/images/hotel/img-4.jpg') }}" height="500px" alt="">
+                            <img id="imageRoomType" src="{{ asset('fe/images/hotel/img-4.jpg') }}" height="500px"
+                                 alt="">
                         </div>
                     </div>
                     <!-- End Lager Image -->
@@ -289,6 +290,7 @@
             getDetailRoomType();
             getRoomTypeSpecial();
             getAllUtilities();
+            // getPromotionExists();
 
             async function getDetailRoomType() {
                 let url = API_URL + '/room-type/' + slug;
@@ -372,6 +374,13 @@
                 }
                 $('.service-list').html(str);
             }
+
+            // async function getPromotionExists() {
+            //     let url = API_URL + '/promotion/' + slug;
+            //     let data = await getData(url);
+            //
+            //     console.log(data);
+            // }
 
         })
     </script>

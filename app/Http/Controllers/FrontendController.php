@@ -58,9 +58,11 @@ class FrontendController extends Controller
         return view('pages.flight_list');
     }
 
-    public function car()
+    public function images($slug)
     {
-        return view('pages.car');
+        return view('pages.images')->with([
+            'slug' => $slug
+        ]);
     }
 
     public function carList()

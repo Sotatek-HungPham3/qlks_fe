@@ -29,7 +29,7 @@
 
                                         </ul>
                                     </li>
-                                    <li>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('images/*') ? 'current-menu-parent' : '' }}">
                                         <a href="#" title="">Images</a>
                                         <ul class="sub-menu navImages">
                                         </ul>
