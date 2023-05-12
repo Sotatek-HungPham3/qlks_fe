@@ -61,20 +61,8 @@ class FrontendController extends Controller
 
     public function paymentReturn(Request $request)
     {
-        logger("REQUEST==============" . json_encode($request->all()));
         return view('pages.vnpay_return')->with([
-            "vnp_Amount" => $request->vnp_Amount,
-            "vnp_BankCode" => $request->vnp_BankCode,
-            "vnp_BankTranNo" => $request->vnp_BankTranNo,
-            "vnp_CardType" => $request->vnp_CardType,
-            "vnp_OrderInfo" => $request->vnp_OrderInfo,
-            "vnp_PayDate" => $request->vnp_PayDate,
             "vnp_ResponseCode" => $request->vnp_ResponseCode,
-            "vnp_TmnCode" => $request->vnp_TmnCode,
-            "vnp_TransactionNo" => $request->vnp_TransactionNo,
-            "vnp_TransactionStatus" => $request->vnp_TransactionStatus,
-            "vnp_TxnRef" => $request->vnp_TxnRef,
-            "vnp_SecureHash" => $request->vnp_SecureHash
         ]);
     }
 

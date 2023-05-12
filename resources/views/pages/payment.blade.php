@@ -118,6 +118,10 @@
 @section('js')
     <script>
         $(document).ready(function () {
+            let urlVNPay = localStorage.getItem(KEY_VNPAY);
+            if (urlVNPay) {
+                window.location.href = urlVNPay;
+            }
             var booking = JSON.parse(localStorage.getItem(BOOKING));
             var totalBill = 0;
             if (!booking) {
@@ -229,7 +233,7 @@
                     notifyError("Please enter the email");
                     return;
                 }
-                if(cf_email !== email){
+                if (cf_email !== email) {
                     notifyError("Email confirmation is not the same email");
                     return;
                 }
@@ -261,6 +265,7 @@
                 let url = API_URL + '/payments/create';
                 let data = await postData(url, params);
 
+                localStorage.setItem(KEY_VNPAY, data.data);
                 window.location.href = data.data;
             })
         })

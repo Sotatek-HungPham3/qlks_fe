@@ -16,3 +16,5 @@ const FORMATTER_VND = new Intl.NumberFormat('en-US', {
 const SETTINGS_KEY = 'settings';
 
 const BOOKING = 'booking';
+
+const KEY_VNPAY = 'vnpay_url';
