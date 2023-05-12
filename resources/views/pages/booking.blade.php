@@ -280,7 +280,7 @@
                     };
 
                     localStorage.setItem(BOOKING, JSON.stringify(data));
-
+                    window.location.href = DOMAIN_FE + '/payments';
                 }
             })
         });

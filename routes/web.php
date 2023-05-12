@@ -20,6 +20,7 @@ Route::get('/images/{slug}', [FrontendController::class, 'images'])->name('image
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/booking/{room_type?}/{check_in?}/{check_out?}/{guest?}', [FrontendController::class, 'booking'])->name('booking');
 Route::get('/payments', [FrontendController::class, 'payments'])->name('payments');
+Route::get('/payment-return', [FrontendController::class, 'paymentReturn'])->name('paymentReturn');
 
 
 

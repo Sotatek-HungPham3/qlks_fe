@@ -21,15 +21,15 @@ async function getSettingsPage() {
     }
 }
 
-function dateCompare(d1, d2){
+function dateCompare(d1, d2) {
     const date1 = new Date(d1);
     const date2 = new Date(d2);
 
-    if(date1 > date2){
+    if (date1 > date2) {
         return 1;
-    } else if(date1 < date2){
+    } else if (date1 < date2) {
         return -1;
-    } else{
+    } else {
         return 0;
     }
 }
@@ -69,6 +69,13 @@ function notifyError(message = '') {
     });
 }
 
+function subDate(date1, date2) {
+    let dateAfter = new Date(date1);
+    let dateBefore = new Date(date2);
+    let Difference_In_Time = dateBefore.getTime() - dateAfter.getTime();
+
+    return Difference_In_Time / (1000 * 3600 * 24);
+}
 
 function actionWhenError(response) {
     switch (response.status) {
@@ -97,6 +104,23 @@ async function getData(url) {
         method: "GET",
         success: function (response) {
             data = response.data;
+        },
+        error: function (response) {
+            actionWhenError(response);
+        }
+    });
+
+    return data;
+}
+
+async function postData(url, params) {
+    let data;
+    await $.ajax({
+        url: url,
+        method: "POST",
+        data: params,
+        success: function (response) {
+            data = response;
         },
         error: function (response) {
             actionWhenError(response);

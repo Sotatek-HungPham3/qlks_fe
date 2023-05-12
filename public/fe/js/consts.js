@@ -8,6 +8,11 @@ const FORMATTER = new Intl.NumberFormat('en-US', {
     //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
 });
 
+const FORMATTER_VND = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'VND'
+})
+
 const SETTINGS_KEY = 'settings';
 
 const BOOKING = 'booking';
