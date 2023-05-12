@@ -44,6 +44,11 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function payments()
+    {
+        return view('pages.payment');
+    }
+
     public function blog()
     {
         return view('pages.blog');

@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-field">
                                 <label for="guest">Guest</label>
-                                <input type="text" placeholder="Guest" class="field-input" id="guest">
+                                <input type="number" placeholder="Guest" class="field-input" id="guest" min="0">
                             </div>
                             <div class="form-field">
                                 <label for="note">Note</label>
@@ -91,15 +91,22 @@
             var guest = '{{ $guest ?? 0 }}';
 
             getRoomTypes(roomType);
+
             $('#checkIn').val(getDateFromUnix(checkIn));
             $('#checkOut').val(getDateFromUnix(checkOut));
             if (checkIn === 0 || checkOut === 0) {
-                console.log(1)
-                $('#checkIn').val(new Date().toISOString().split('T')[0]).attr('min', new Date().toISOString().split('T')[0]);
-                $('#checkOut').val(new Date().toISOString().split('T')[0]).attr('min', new Date().toISOString().split('T')[0]);
+                let tomorrow = addDays(new Date(), 1);
+                let nextTomorrow = addDays(new Date(tomorrow), 1);
+                $('#checkIn').val(tomorrow.toISOString().split('T')[0]).attr('min', tomorrow.toISOString().split('T')[0]);
+                $('#checkOut').val(nextTomorrow.toISOString().split('T')[0]).attr('min', nextTomorrow.toISOString().split('T')[0]);
             }
             if (guest !== '0' && guest !== 'more') {
                 $('#guest').val(guest);
+            }
+
+            function addDays(date, days) {
+                date.setDate(date.getDate() + days);
+                return date;
             }
 
             async function getRoomType(roomType) {
@@ -137,7 +144,7 @@
                                 <input type="text" class="field-input" data-id="${item.id}" value="${item.name}" disabled>
                             </div>
                             <div class="form-field">
-                                <input type="number" placeholder="Number room of ${item.name}" data-id="${item.id}" value="${val}" class="field-input numberRoom">
+                                <input type="number" min="0" placeholder="Number room of ${item.name}" data-id="${item.id}" value="${val}" class="field-input numberRoom">
                             </div>`;
                     }
                     str += `<div class="form-field"style="text-align: center;">
@@ -149,23 +156,68 @@
                 if (roomType !== 0) {
                     await getRoomType(roomType);
                 }
+
+                var booking = JSON.parse(localStorage.getItem(BOOKING));
+                if (booking) {
+                    notifySuccess('You have a booking unpaid!');
+                    let room = JSON.parse(booking.room);
+                    $('#checkIn').val(booking.checkIn);
+                    $('#checkOut').val(booking.checkOut);
+                    $('#guest').val(booking.guest);
+                    $('#note').val(booking.note);
+
+                    $('.numberRoom').each(function (i, obj) {
+                        let oneRoom = room.find((item) => {
+                            return item.roomTypeId === $(obj).attr('data-id')
+                        });
+                        $(obj).val(oneRoom.value);
+                    })
+                }
             }
 
-            $(document).on('click', '#checkRoom', async function () {
+            async function checkRoom() {
                 let check_in = $('#checkIn').val();
                 let url = API_URL + '/check-available-room?checkIn=' + check_in;
                 let data = await getData(url);
-                console.log(data);
+                let count = 0;
                 for (let item of data) {
                     let roomVal = $(`.numberRoom[data-id="${item.roomId}"]`).val();
-                    if (roomVal !== 0) {
-                        if (roomVal > item.totalRoom - item.countRoom) {
-                            notifyError(`${item.nameRoom} out of room`);
-                            return;
+                    if (parseInt(roomVal) !== 0) {
+                        if (parseInt(roomVal) > parseInt(item.totalRoom) - parseInt(item.countRoom)) {
+                            return {
+                                msg: `${item.nameRoom} out of room`,
+                                status: false
+                            };
                         }
+                        count++;
                     }
                 }
-                notifySuccess('Success!! Room available')
+                if (count === 0) {
+                    return {
+                        msg: `Please choose room`,
+                        status: false
+                    };
+                }
+                return {
+                    msg: 'Success!! Room available',
+                    status: true
+                }
+            }
+
+            $(document).on('click', '#checkRoom', async function () {
+                let data = await checkRoom();
+                if (data.status) {
+                    notifySuccess(data.msg);
+                } else {
+                    notifyError(data.msg);
+                }
+            });
+
+            $(document).on('change', '.numberRoom', function () {
+                let value = $(this).val();
+                if (parseInt(value) < 0 || isNaN(parseInt(value))) {
+                    $(this).val(0);
+                }
             });
 
             $('#checkIn').change(function () {
@@ -202,6 +254,35 @@
                 }
             });
 
+            $(document).on('click', '.bookNow', async function () {
+                let dataCheckRoom = await checkRoom();
+                if (!dataCheckRoom.status) {
+                    notifyError(dataCheckRoom.msg);
+                } else {
+                    let guest = $('#guest').val();
+                    console.log(guest)
+                    if (parseInt(guest) === 0 || isNaN(parseInt(guest))) {
+                        notifyError('Please enter guest');
+                    }
+                    let arrRoom = [];
+                    $('.numberRoom').each(function (i, obj) {
+                        arrRoom.push({
+                            roomTypeId: $(obj).attr('data-id'),
+                            value: $(obj).val()
+                        })
+                    })
+                    let data = {
+                        checkIn: $('#checkIn').val(),
+                        checkOut: $('#checkOut').val(),
+                        guest: guest,
+                        note: $('#note').val(),
+                        room: JSON.stringify(arrRoom)
+                    };
+
+                    localStorage.setItem(BOOKING, JSON.stringify(data));
+
+                }
+            })
         });
     </script>
 @endsection

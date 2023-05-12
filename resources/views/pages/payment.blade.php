@@ -72,21 +72,21 @@
                                             <span>Room:</span>
                                             Luxury View Suite
                                         </li>
-                                    </ul>   
+                                    </ul>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="payment-price">
 
                                     <figure>
-                                        <img src="images/hotel/img-9.jpg" alt="">
+                                        <img src="{{ asset('fe/images/hotel/img-9.jpg') }}" alt="">
                                     </figure>
                                     <div class="total-trip">
                                         <span>
                                             1 Room x 2 Nights<br>
                                             $501.33<small>/night</small>
                                         </span>
-                                       
+
                                         <p>
                                             Trip Total: <ins>$365</ins>
 
@@ -94,7 +94,7 @@
                                             </i>
                                         </p>
                                     </div>
-                                </div>   
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -232,7 +232,7 @@
                                 </div>
 
                             </div>
-                            
+
                         </div>
 
                         <div class="submit text-center">

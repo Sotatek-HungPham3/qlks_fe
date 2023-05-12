@@ -9,3 +9,5 @@ const FORMATTER = new Intl.NumberFormat('en-US', {
 });
 
 const SETTINGS_KEY = 'settings';
+
+const BOOKING = 'booking';
