@@ -78,9 +78,11 @@
         loadRoomTypes();
         getSettingsPage();
 
-        const SETTING = JSON.parse(localStorage.getItem(SETTINGS_KEY));
-        // config text global
-        $('.address').text(SETTING.address);
+        if (localStorage.getItem(SETTINGS_KEY)) {
+            const SETTING = JSON.parse(localStorage.getItem(SETTINGS_KEY));
+            // config text global
+            $('.address').text(SETTING.address);
+        }
     })
 </script>
 {{--<script>--}}

@@ -151,6 +151,28 @@
             $('.message').html(str);
         });
 
+        update();
+
+        async function update() {
+            let data = {
+                "vnp_Amount" : '{{ $vnp_Amount }}',
+                "vnp_BankCode" : '{{ $vnp_BankCode }}',
+                "vnp_BankTranNo" : '{{ $vnp_BankTranNo ?? null }}',
+                "vnp_CardType" : '{{ $vnp_CardType }}',
+                "vnp_OrderInfo" : '{{ $vnp_OrderInfo }}',
+                "vnp_PayDate" : '{{ $vnp_PayDate }}',
+                "vnp_ResponseCode" : '{{ $vnp_ResponseCode }}',
+                "vnp_TmnCode" : '{{ $vnp_TmnCode }}',
+                "vnp_TransactionNo" : '{{ $vnp_TransactionNo }}',
+                "vnp_TransactionStatus" : '{{ $vnp_TransactionStatus }}',
+                "vnp_TxnRef" : '{{ $vnp_TxnRef }}',
+                "vnp_SecureHash" : '{{ $vnp_SecureHash }}'
+            }
+            let url = API_URL + '/payments/update';
+
+            await postData(url, data);
+        }
+
         function returnHome() {
             window.location.href = DOMAIN_FE;
         }

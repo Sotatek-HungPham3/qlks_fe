@@ -12,6 +12,17 @@ function notifySuccess(message = '') {
     });
 }
 
+function notifyInformation(message = '') {
+    $.toast({
+        heading: 'List Room Available',
+        text: message,
+        showHideTransition: 'slide',
+        position: 'middle',
+        icon: 'info',
+        hideAfter: 10000
+    });
+}
+
 async function getSettingsPage() {
     let data = localStorage.getItem(SETTINGS_KEY);
     if (!data) {
