@@ -242,7 +242,7 @@
                     notifyError("Please enter the phone");
                     return;
                 }
-                let passport = $('#passport').val();
+                let passport = $('#identification_number').val();
                 if (passport === "") {
                     notifyError("Please enter the passport / citizen identification");
                     return;

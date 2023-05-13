@@ -132,19 +132,24 @@
         $(document).ready(function () {
             let code = '{{ $vnp_ResponseCode }}';
             localStorage.removeItem(BOOKING);
+            localStorage.removeItem(KEY_VNPAY);
             let str = '';
             if (code === '00') {
                 str = `<span style="color: green; font-size: 3em; "> Booking successfully!! </span> <br>
  <span style="padding-top: 1em; padding-bottom: 2em">Please check your email.</span> <br>
-<button class="btn btn-success">Go Home</button>
+<button class="btn btn-success backHome" onclick="returnHome()">Go Home</button>
                         `;
             } else {
                 str = `<span style="color: red; font-size: 3em; "> Booking fail!! </span> <br>
             <span style="padding-top: 1em; padding-bottom: 2em">Please check again your payments.</span> <br>
-                        <button class="btn btn-success">Go Home</button>
+                        <a class="btn btn-danger backHome" onclick="returnHome()">Go Home</a>
                         `;
             }
             $('.message').html(str);
         });
+
+        function returnHome() {
+            window.location.href = DOMAIN_FE;
+        }
     </script>
 @endsection
