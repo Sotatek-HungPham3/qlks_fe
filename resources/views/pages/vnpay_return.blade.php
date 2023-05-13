@@ -131,6 +131,9 @@
     <script>
         $(document).ready(function () {
             let code = '{{ $vnp_ResponseCode }}';
+            if (!localStorage.getItem(BOOKING) || !localStorage.getItem(KEY_VNPAY)) {
+                window.location.href = DOMAIN_FE;
+            }
             localStorage.removeItem(BOOKING);
             localStorage.removeItem(KEY_VNPAY);
             let str = '';
