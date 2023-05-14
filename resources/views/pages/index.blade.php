@@ -352,7 +352,7 @@
 
             $('#check_in').change(function () {
                 let check_in = $(this).val();
-                let today = new Date().toLocaleDateString()
+                let today = new Date().toLocaleDateString('en-US')
 
                 if (dateCompare(check_in, today) < 1) {
                     notifyError('Please choose check in after today');
@@ -370,7 +370,7 @@
 
             $('#check_out').change(function () {
                 let check_out = $(this).val();
-                let today = new Date().toLocaleDateString()
+                let today = new Date().toLocaleDateString('en-US')
 
                 if (dateCompare(check_out, today) < 1) {
                     notifyError('Please choose check out after today');
