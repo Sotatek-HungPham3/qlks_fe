@@ -52,7 +52,7 @@
 
 <!-- Library JS -->
 <script type="text/javascript" src="{{ asset('fe/js/library/jquery-1.11.0.min.js') }}"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+{{--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>--}}
 <script type="text/javascript" src="{{ asset('fe/js/library/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('fe/js/library/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('fe/js/library/owl.carousel.min.js') }}"></script>
@@ -82,6 +82,8 @@
             const SETTING = JSON.parse(localStorage.getItem(SETTINGS_KEY));
             // config text global
             $('.address').text(SETTING.address);
+            $('.settingPhone').text(SETTING.phone);
+            $('.settingContactMail').text(SETTING.email);
         }
     })
 </script>

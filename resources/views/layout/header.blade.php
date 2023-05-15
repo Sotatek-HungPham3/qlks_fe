@@ -34,10 +34,10 @@
                                         <ul class="sub-menu navImages">
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#" title="">Contact Us</a>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('contact') ? 'current-menu-parent' : '' }}">
+                                        <a href="{{ route('contact') }}" title="">Contact Us</a>
                                     </li>
-                                    <li class="{{ (\Illuminate\Support\Facades\Request::is('booking') or \Illuminate\Support\Facades\Request::is('payments')) ? 'current-menu-parent' : '' }}">
+                                    <li class="{{ (\Illuminate\Support\Facades\Request::is('booking') or \Illuminate\Support\Facades\Request::is('payments') or \Illuminate\Support\Facades\Request::is('payment-return')) ? 'current-menu-parent' : '' }}">
                                         <a href="{{ route('booking') }}">Booking Now</a>
                                     </li>
                                 </ul>

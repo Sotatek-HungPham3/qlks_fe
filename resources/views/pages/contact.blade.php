@@ -9,7 +9,7 @@
             <!-- Logo -->
             <div class="logo-banner text-center">
                 <a href="#" title="">
-                    <img src="images/logo-banner.png" alt="">
+                    <img src="{{ asset('fe/images/logo-banner.png') }}" alt="">
                 </a>
             </div>
             <!-- Logo -->
@@ -23,52 +23,50 @@
                     <!-- Breakcrumb -->
                     <section class="breakcrumb-sc">
                         <ul class="breadcrumb arrow">
-                            <li><a href="index-2.html"><i class="fa fa-home"></i></a></li>
+                            <li><a href=""><i class="fa fa-home"></i></a></li>
                             <li>Contact us</li>
                         </ul>
                     </section>
                     <!-- End Breakcrumb -->
                     <section class="contact-page">
-                        <div class="contact-maps">
-                            <div id="contact-maps" data-map-zoom="16" data-map-latlng="45.738028, 21.224535" data-map-content="Book Awesome"></div>
-                        </div>
-                        <div class="contact-cn">
+                        <div style="text-align: center;">
                             <h2>We are always in touch</h2>
-                            <ul>
+                            <ul style="list-style: none">
                                 <li>
-                                    <img src="images/icon-maker-contact.png" alt="">
-                                    25 California Avenue, Santa Monica, California.
+                                    <img src="{{ asset('fe/images/icon-maker-contact.png') }}" alt="">
+                                    <span class="address"></span>
                                 </li>
                                 <li>
-                                    <img src="images/icon-phone.png" alt="">
-                                    +1-888-8765-1234
+                                    <img src="{{ asset('fe/images/icon-phone.png') }}" alt="">
+                                    <span class="settingPhone"></span>
                                 </li>
                                 <li>
-                                    <img src="images/icon-email.png" alt="">
-                                    <a href="#">contact@bookatrip.com</a>
+                                    <img src="{{ asset('fe/images/icon-email.png') }}" alt="">
+                                    <a class="settingContactMail" href="#">contact@bookatrip.com</a>
                                 </li>
                             </ul>
-                            <div class="form-contact">
-                                <form id="contact-form" action="http://envato.megadrupal.com/html/bookawesome/processContact.php" method="post">
-                                    <div class="form-field">
-                                        <label for="name">Name <sup>*</sup></label>
-                                        <input type="text" name="name" id="name" class="field-input">
-                                    </div>
-                                    <div class="form-field">
-                                        <label for="email">Email <sup>*</sup></label>
-                                        <input type="text" name="email" id="email" class="field-input">
-                                    </div>
-                                    <div class="form-field form-field-area">
-                                        <label for="message">Message <sup>*</sup></label>
-                                        <textarea name="message" id="message" cols="30" rows="10" class="field-input"></textarea>
-                                    </div>
-                                    <div class="form-field text-center">
-                                        <button type="submit" id="submit-contact" class="awe-btn awe-btn-2 arrow-right arrow-white awe-btn-lager">Submit</button>
-                                    </div>
-                                    <div id="contact-content">
-                                    </div>
-                                </form>
-                            </div>
+
+                        </div>
+                        <div class="form-contact">
+                            <form >
+                                <div class="form-field">
+                                    <label for="name">Name <sup>*</sup></label>
+                                    <input type="text" name="name" id="name" class="field-input">
+                                </div>
+                                <div class="form-field">
+                                    <label for="email">Email <sup>*</sup></label>
+                                    <input type="text" name="email" id="email" class="field-input">
+                                </div>
+                                <div class="form-field form-field-area">
+                                    <label for="message">Message <sup>*</sup></label>
+                                    <textarea name="message" id="message" cols="30" rows="10" class="field-input"></textarea>
+                                </div>
+                                <div class="form-field text-center">
+                                    <button type="submit" id="submit-contact" class="awe-btn awe-btn-2 arrow-right arrow-white awe-btn-lager">Submit</button>
+                                </div>
+                                <div id="contact-content">
+                                </div>
+                            </form>
                         </div>
                     </section>
                 </div>
