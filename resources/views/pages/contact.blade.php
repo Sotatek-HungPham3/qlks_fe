@@ -67,7 +67,7 @@
                                           class="field-input"></textarea>
                             </div>
                             <div class="form-field text-center">
-                                <button type="submit" id="submit-contact"
+                                <button type="button"
                                         class="awe-btn awe-btn-2 arrow-right arrow-white awe-btn-lager createContact">
                                     Submit
                                 </button>
@@ -84,7 +84,8 @@
 @section('js')
     <script>
         $(document).ready(function () {
-            $('.createContact').click(async function () {
+            $('.createContact').click(async function (e) {
+                e.preventDefault();
                 let name = $('#name').val();
                 let email = $('#email').val();
                 let phone = $('#phone').val();
