@@ -55,7 +55,7 @@
                             </div>
                             <div class="form-field">
                                 <label for="email">Email <sup>*</sup></label>
-                                <input type="email" name="email" id="email" class="field-input">
+                                <input type="email" name="email" id="email" value="{{$email??""}}" class="field-input">
                             </div>
                             <div class="form-field">
                                 <label for="phone">Phone <sup>*</sup></label>

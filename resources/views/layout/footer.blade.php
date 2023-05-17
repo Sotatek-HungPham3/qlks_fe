@@ -14,9 +14,10 @@
                         <div class="ul-ft">
                             <ul>
                                 <li><a href="{{ route('about') }}" title="">About</a></li>
-                                <li><a href="{{ route('detailBuilding', ['slug' => 'deluxe']) }}" title="">Room Type</a></li>
-                                <li><a href="fqa.html" title="">Images</a></li>
-                                <li><a href="careers.html" title="">Contact us</a></li>
+                                <li><a href="{{ route('detailBuilding', ['slug' => 'deluxe']) }}" title="">Room Type</a>
+                                </li>
+                                <li><a href="{{ route('images', ['slug'=>'deluxe']) }}" title="">Images</a></li>
+                                <li><a href="{{ route('contact') }}" title="">Contact us</a></li>
                             </ul>
                         </div>
                     </div>

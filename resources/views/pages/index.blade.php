@@ -189,33 +189,19 @@
                 <!-- Subscribe -->
                 <div class="col-md-6">
                     <div class="subscribe">
-                        <h3>Subscribe to our newsletter</h3>
+                        <h3>Contact us now</h3>
                         <p>Enter your email address and we’ll send you our regular promotional emails, packed with
                             special offers, great deals, and huge discounts</p>
                         <!-- Subscribe Form -->
                         <div class="subscribe-form">
-                            <form action="#" method="get">
-                                <input type="text" name="" value="" placeholder="Your email" class="subscribe-input">
-                                <button type="submit"
-                                        class="awe-btn awe-btn-5 arrow-right text-uppercase awe-btn-lager">subcrible
-                                </button>
-                            </form>
+                            <input type="email" id="emailContact" name="" value="" placeholder="Your email"
+                                   class="subscribe-input">
+                            <button
+                                class="awe-btn awe-btn-5 arrow-right text-uppercase awe-btn-lager contact">
+                                Contact
+                            </button>
                         </div>
                         <!-- End Subscribe Form -->
-                        <!-- Follow us -->
-                        <div class="follow-us">
-                            <h4>Follow us</h4>
-                            <div class="follow-group">
-                                <a href="#" title=""><i class="fa fa-facebook"></i></a>
-                                <a href="#" title=""><i class="fa fa-twitter"></i></a>
-                                <a href="#" title=""><i class="fa fa-pinterest"></i></a>
-                                <a href="#" title=""><i class="fa fa-linkedin"></i></a>
-                                <a href="#" title=""><i class="fa fa-instagram"></i></a>
-                                <a href="#" title=""><i class="fa fa-google-plus"></i></a>
-                                <a href="#" title=""><i class="fa fa-digg"></i></a>
-                            </div>
-                        </div>
-                        <!-- Follow us -->
                     </div>
                 </div>
                 <!-- End Subscribe -->
@@ -367,6 +353,15 @@
                 }
 
             });
+
+            $('.contact').click(function () {
+                let email = $('#emailContact').val();
+                if (email !== "") {
+                    window.location.href = DOMAIN_FE + '/contact?email=' + email;
+                } else {
+                    notifyError('Please enter the email');
+                }
+            })
 
             $('#check_out').change(function () {
                 let check_out = $(this).val();

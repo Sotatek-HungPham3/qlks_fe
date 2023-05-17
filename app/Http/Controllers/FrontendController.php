@@ -29,9 +29,11 @@ class FrontendController extends Controller
         return view('pages.about');
     }
 
-    public function contact()
+    public function contact(Request $request)
     {
-        return view('pages.contact');
+        return view('pages.contact')->with([
+            'email' => $request->email
+        ]);
     }
 
     public function booking(Request $request)
