@@ -5,7 +5,7 @@
                     <!-- Logo -->
                     <div class="col-md-4">
                         <div class="logo-foter">
-                            <a href="index-2.html" title=""><img src="{{ asset('fe/images/logo-footer.png') }}" alt=""></a>
+                            <a href="/" title=""><img src="{{ asset('fe/images/logo-footer.png') }}" alt=""></a>
                         </div>
                     </div>
                     <!-- End Logo -->
