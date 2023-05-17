@@ -219,6 +219,8 @@
             var lstRoomType;
             var images
 
+            console.log(1);
+
             getRoomType();
             getImagesInHomePage();
 
