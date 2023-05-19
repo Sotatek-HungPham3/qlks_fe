@@ -234,6 +234,7 @@
                 if (lstRoomType.length > 0) {
                     let i = 0;
                     for (const item of lstRoomType) {
+                        let domain = DOMAIN_FE + '/room-type/' + item.slug;
                         let starRoomType = '';
                         if (item.star) {
                             for (let i = 0; i < item.star; i++) {
@@ -246,7 +247,7 @@
                     <div class="col-xs-6 col-md-3">
                         <div class="sales-item">
                             <figure class="home-sales-img">
-                                <a href="#" title="">
+                                <a href="${domain}" title="">
                                     <img src="${image}" alt="">
                                 </a>
                                 <figcaption>
@@ -256,10 +257,10 @@
                             <div class="home-sales-text">
                                 <div class="home-sales-name-places">
                                     <div class="home-sales-name">
-                                        <a href="#" title="">${item.name}</a>
+                                        <a href="${domain}" title="">${item.name}</a>
                                     </div>
                                         <div class="home-sales-places">
-                                            <a href="#" title="">${starRoomType}</a>
+                                            <a href="${domain}" title="">${starRoomType}</a>
                                         </div>
                                 </div>
                                 <hr class="hr">
