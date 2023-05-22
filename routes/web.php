@@ -13,21 +13,25 @@ use App\Http\Controllers\FrontendController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home-page', [FrontendController::class, 'homePage'])->name('homePage');
+Route::get('/', [FrontendController::class, 'homePage'])->name('homePage');
 Route::get('/list-building', [FrontendController::class, 'listBuilding'])->name('listBuilding');
-Route::get('/detail-building', [FrontendController::class, 'detailBuilding'])->name('detailBuilding');
+Route::get('/room-type/{slug}', [FrontendController::class, 'detailBuilding'])->name('detailBuilding');
+Route::get('/images/{slug}', [FrontendController::class, 'images'])->name('images');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/booking/{room_type?}/{check_in?}/{check_out?}/{guest?}', [FrontendController::class, 'booking'])->name('booking');
+Route::get('/payments', [FrontendController::class, 'payments'])->name('payments');
+Route::get('/payment-return', [FrontendController::class, 'paymentReturn'])->name('paymentReturn');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
-Route::get('/payment', [FrontendController::class, 'payment'])->name('payment');
+
+
+
+
+
 Route::get('/blog', [FrontendController::class, 'blog'])->name('blog');
 Route::get('/blog-detail', [FrontendController::class, 'blogDetail'])->name('blogDetail');
 Route::get('/flight', [FrontendController::class, 'flight'])->name('flight');
 Route::get('/flight-list', [FrontendController::class, 'flightList'])->name('flightList');
-Route::get('/car', [FrontendController::class, 'car'])->name('car');
+
 Route::get('/car-list', [FrontendController::class, 'carList'])->name('carList');
 Route::get('/pakage-Deals', [FrontendController::class, 'pakageDeals'])->name('pakageDeals');
 Route::get('/pakage-Deals-List', [FrontendController::class, 'pakageDealsList'])->name('pakageDealsList');

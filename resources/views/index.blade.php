@@ -11,7 +11,7 @@
 <!-- Mirrored from envato.megadrupal.com/html/bookawesome/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Aug 2015 04:48:30 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>BOOKAWESOME HOTEL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('fe/css/library/owl.carousel.css') }}">
     <!-- End Library CSS -->
     <link rel="stylesheet" href="{{ asset('fe/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css">
 
     @yield('css')
 </head>
@@ -51,7 +52,7 @@
 
 <!-- Library JS -->
 <script type="text/javascript" src="{{ asset('fe/js/library/jquery-1.11.0.min.js') }}"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+{{--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>--}}
 <script type="text/javascript" src="{{ asset('fe/js/library/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('fe/js/library/bootstrap.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('fe/js/library/owl.carousel.min.js') }}"></script>
@@ -63,6 +64,29 @@
 <!-- Main Js -->
 <script type="text/javascript" src="{{ asset('fe/js/script.js') }}"></script>
 <!-- End Main Js -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+<script type="text/javascript">
+    const API_URL = '{{ config('app.api_url') }}';
+    const DOMAIN_S3 = '{{ env('DOMAIN_ADMIN') }}';
+    const DOMAIN_FE = '{{ config('app.url') }}';
+</script>
+<script type="text/javascript" src="{{ asset('fe/js/consts.js') }}"></script>
+<script type="text/javascript" src="{{ asset('fe/js/helper.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        loadRoomTypes();
+        getSettingsPage();
+
+        if (localStorage.getItem(SETTINGS_KEY)) {
+            const SETTING = JSON.parse(localStorage.getItem(SETTINGS_KEY));
+            // config text global
+            $('.address').text(SETTING.address);
+            $('.settingPhone').text(SETTING.phone);
+            $('.settingContactMail').text(SETTING.email);
+        }
+    })
+</script>
 {{--<script>--}}
 {{--    (function (i, s, o, g, r, a, m) {--}}
 {{--        i['GoogleAnalyticsObject'] = r;--}}

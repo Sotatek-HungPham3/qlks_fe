@@ -5,7 +5,7 @@
                     <!-- Logo -->
                     <div class="col-md-4">
                         <div class="logo-foter">
-                            <a href="index-2.html" title=""><img src="{{ asset('fe/images/logo-footer.png') }}" alt=""></a>
+                            <a href="/" title=""><img src="{{ asset('fe/images/logo-footer.png') }}" alt=""></a>
                         </div>
                     </div>
                     <!-- End Logo -->
@@ -13,22 +13,11 @@
                     <div class="col-xs-6 col-sm-3 col-md-2">
                         <div class="ul-ft">
                             <ul>
-                                <li><a href="about.html" title="">About</a></li>
-                                <li><a href="blog.html" title="">Blog</a></li>
-                                <li><a href="fqa.html" title="">FQA</a></li>
-                                <li><a href="careers.html" title="">Carrers</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End Navigation Footer -->
-                    <!-- Navigation Footer -->
-                    <div class="col-xs-6 col-sm-3 col-md-2">
-                        <div class="ul-ft">
-                            <ul>
-                                <li><a href="contact.html" title="">Contact Us</a></li>
-                                <li><a href="#" title="">Privacy Policy</a></li>
-                                <li><a href="#" title="">Term of Service</a></li>
-                                <li><a href="#" title="">Security</a></li>
+                                <li><a href="{{ route('about') }}" title="">About</a></li>
+                                <li><a href="{{ route('detailBuilding', ['slug' => 'deluxe']) }}" title="">Room Type</a>
+                                </li>
+                                <li><a href="{{ route('images', ['slug'=>'deluxe']) }}" title="">Images</a></li>
+                                <li><a href="{{ route('contact') }}" title="">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -43,12 +32,6 @@
                             <div class="dropdown-body">
                                 <ul>
                                     <li class="current"><a href="#" title="">English</a></li>
-                                    <li><a href="#" title="">Bahasa Melayu</a></li>
-                                    <li><a href="#" title="">Català</a></li>
-                                    <li><a href="#" title="">Dansk</a></li>
-                                    <li><a href="#" title="">Deutsch</a></li>
-                                    <li><a href="#" title="">Francais</a></li>
-                                    <li><a href="#" title="">Italiano</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -61,12 +44,6 @@
                             <div class="dropdown-body">
                                 <ul>
                                     <li class="current"><a href="#" title="">US</a></li>
-                                    <li><a href="#" title="">ARS</a></li>
-                                    <li><a href="#" title="">ADU</a></li>
-                                    <li><a href="#" title="">CAD</a></li>
-                                    <li><a href="#" title="">CHF</a></li>
-                                    <li><a href="#" title="">CNY</a></li>
-                                    <li><a href="#" title="">CZK</a></li>
                                 </ul>
                             </div>
                         </div>

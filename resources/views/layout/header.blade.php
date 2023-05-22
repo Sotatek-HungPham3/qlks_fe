@@ -3,7 +3,7 @@
             <div class="container">
                 <!-- Logo -->
                 <div class="logo float-left">
-                    <a href="index-2.html" title=""><img src="{{ asset('fe/images/logo-header.png') }}" alt=""></a>
+                    <a href="/" title=""><img src="{{ asset('fe/images/logo-header.png') }}" alt=""></a>
                 </div>
                 <!-- End Logo -->
                 <!-- Bars -->
@@ -17,117 +17,28 @@
                         <div class="tb">
                             <div class="tb-cell">
                                 <ul class="menu-list text-uppercase">
-                                    <li class="current-menu-parent">
-                                        <a href="index-2.html" title="">Home</a>
-                                        <ul class="sub-menu">
-                                            <li class="current-menu-item"><a href="index-2.html" title="">Home menu 1</a></li>
-                                            <li><a href="index2.html" title="">Home menu 2</a></li>
-                                            <li><a href="index3.html" title="">Home menu 3</a></li>
-                                            <li><a href="index4.html" title="">Home menu 4</a></li>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('/') ? 'current-menu-parent' : '' }}">
+                                        <a href="/" title="">Home</a>
+                                    </li>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('about') ? 'current-menu-parent' : '' }}">
+                                        <a href="{{ route('about') }}">About</a>
+                                    </li>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('room-type/*') ? 'current-menu-parent' : '' }}">
+                                        <a href="#" title="">Room Types</a>
+                                        <ul class="sub-menu navRoomTypes">
+
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="#" title="">Blog</a>
-                                                <ul class="sub-menu">
-                                                    <li>
-                                                        <a href="blog.html" title="">Blog</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-detail.html">Blog Detail</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="about.html" title="">About</a></li>
-                                            <li><a href="contact.html" title="">Contact</a></li>
-                                            <li><a href="payment.html" title="">Payment</a></li>
-                                            <li><a href="element.html" title="">Element</a></li>
-                                            <li><a href="404.html" title="">404</a></li>
-                                            <li><a href="comingsoon.html" title="">Comingsoon</a></li>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('images/*') ? 'current-menu-parent' : '' }}">
+                                        <a href="#" title="">Images</a>
+                                        <ul class="sub-menu navImages">
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#" title="">Hotel</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-hotel.html" title="">Hotel</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-list.html">Hotel List 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-list-2.html">Hotel List 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-maps.html">Hotel Map</a>
-                                            </li>
-                                            <li>
-                                                <a href="hotel-detail.html">Hotel Detail</a>
-                                            </li>
-                                        </ul>
+                                    <li class="{{ \Illuminate\Support\Facades\Request::is('contact') ? 'current-menu-parent' : '' }}">
+                                        <a href="{{ route('contact') }}" title="">Contact Us</a>
                                     </li>
-                                    <li>
-                                        <a href="#" title="">Flights</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-flight.html" title="">Flights</a>
-                                            </li>
-                                            <li>
-                                                <a href="flight-list.html">Flight List</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Car</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-car.html" title="">Car</a>
-                                            </li>
-                                            <li>
-                                                <a href="car-list.html">Cart List</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Package</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-package.html" title="">Package Deals</a>
-                                            </li>
-                                            <li>
-                                                <a href="package-list.html">Package Deals List</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Cruises</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-cruise.html" title="">Cruises</a>
-                                            </li>
-                                            <li>
-                                                <a href="cruise-list.html">Cruise List</a>
-                                            </li>
-                                            <li>
-                                                <a href="cruise-detail.html">Cruise Detail</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Tours</a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a href="home-tour.html" title="">Tours</a>
-                                            </li>
-                                            <li>
-                                                <a href="tour-list.html">Tour List</a>
-                                            </li>
-                                            <li>
-                                                <a href="tour-detail.html">Tour Detail</a>
-                                            </li>
-                                        </ul>
+                                    <li class="{{ (\Illuminate\Support\Facades\Request::is('booking') or \Illuminate\Support\Facades\Request::is('payments') or \Illuminate\Support\Facades\Request::is('payment-return')) ? 'current-menu-parent' : '' }}">
+                                        <a href="{{ route('booking') }}">Booking Now</a>
                                     </li>
                                 </ul>
                             </div>
