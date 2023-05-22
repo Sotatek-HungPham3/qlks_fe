@@ -340,7 +340,16 @@
                             roomTypeId: $(obj).attr('data-id'),
                             value: $(obj).val()
                         })
-                    })
+                    });
+
+                    let checkOutNew = $('#checkOut').val();
+                    let today = new Date().toLocaleDateString('en-US')
+
+                    if(dateCompare(checkOutNew, today) < 0){
+                        notifyError("Check out must be large than today");
+                        return;
+                    }
+
                     let data = {
                         checkIn: $('#checkIn').val(),
                         checkOut: $('#checkOut').val(),
