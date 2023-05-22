@@ -93,6 +93,7 @@
 
                 if (name === "" || email === "" || phone === "" || message === "") {
                     notifyError('Please complete all information');
+                    return;
                 }
 
                 let params = {

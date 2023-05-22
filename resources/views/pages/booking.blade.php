@@ -1,8 +1,5 @@
 @extends('index')
-@section('title-page', 'Thanh toán')
-@section('css')
-
-@endsection
+@section('title-page', 'Booking')
 @section('content')
     <!--Banner-->
     <section class="sub-banner">

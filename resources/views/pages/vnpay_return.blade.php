@@ -131,11 +131,10 @@
     <script>
         $(document).ready(function () {
             let code = '{{ $vnp_ResponseCode }}';
-            if (!localStorage.getItem(BOOKING) || !localStorage.getItem(KEY_VNPAY)) {
+            if (!localStorage.getItem(BOOKING)) {
                 window.location.href = DOMAIN_FE;
             }
             localStorage.removeItem(BOOKING);
-            localStorage.removeItem(KEY_VNPAY);
             let str = '';
             if (code === '00') {
                 str = `<span style="color: green; font-size: 3em; "> Booking successfully!! </span> <br>

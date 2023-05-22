@@ -11,7 +11,7 @@
 <!-- Mirrored from envato.megadrupal.com/html/bookawesome/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Aug 2015 04:48:30 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>BOOKAWESOME HOTEL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">

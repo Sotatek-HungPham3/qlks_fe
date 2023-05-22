@@ -118,10 +118,6 @@
 @section('js')
     <script>
         $(document).ready(function () {
-            let urlVNPay = localStorage.getItem(KEY_VNPAY);
-            if (urlVNPay) {
-                window.location.href = urlVNPay;
-            }
             var booking = JSON.parse(localStorage.getItem(BOOKING));
             var totalBill = 0;
             if (!booking) {
@@ -265,7 +261,6 @@
                 let url = API_URL + '/payments/create';
                 let data = await postData(url, params);
 
-                localStorage.setItem(KEY_VNPAY, data.data);
                 window.location.href = data.data;
             })
         })
